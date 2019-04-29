@@ -18,3 +18,13 @@ lançamento de notas de cada um dos alunos para a minha disciplina
  - Matricular alunos em uma dada turma
  - Listar alunos matriculados
  - Listar notas dos alunos da turma por disciplina
+
+> Como funcionário administrativo da escola, gostaria que o sistema possibilitasse a associação de professores à disciplinas
+ - Vincular cada professor à disciplina e turma que ele dará aula.
+
+> Como funcionário administrativo da escola, gostaria que o sistema possibilitasse a criação e alteração de grade de horários
+ - Montar grade de horários para cada turma, de acordo com disponibilidade dos professores
+ - Visualizar horário por turma
+ - Alterar horários criados
+
+
