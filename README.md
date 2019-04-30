@@ -27,4 +27,17 @@ lançamento de notas de cada um dos alunos para a minha disciplina
  - Visualizar horário por turma
  - Alterar horários criados
 
+> Como aluno da escola, eu gostaria de poder acompanhar meu progresso nas disciplinas ao longo do tempo
+ - Exibir histórico de disciplinas cursadas e não cursadas
+ - Exibir notas e conceitos para as disciplinas cursadas
+
+> Como professor da escola, eu gostaria de poder enviar avisos para os alunos de uma disciplina
+ - Editar mensagem de aviso
+ - Selecionar disciplinas que receberão a mensagem
+ - Agendar envio da mensagem
+
+> Como professor da escola, eu gostaria de saber meu saldo de horas trabalhadas
+ - Registrar horas trabalhadas a cada dia para cada disciplina
+ - Exibir horas trabalhadas para cada disciplina
+ - Exibir total de horas trabalhadas
 
