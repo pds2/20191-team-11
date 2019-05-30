@@ -8,50 +8,28 @@
 #define _PESSOA_H
 
 #include <iostream>
+#include <string>
+
+using namespace std;
 
 class Pessoa {
 public: 
 	
-string getNome();
+virtual string getNome() = 0;
+virtual void setNome(string value) = 0;
+
+virtual string getNascimento() = 0;
+virtual void setNascimento(string value) = 0;
 	
-/**
- * @param value
- */
-void setNome(string value);
+virtual string getSexo() = 0;
+virtual void setSexo(string value) = 0;
 	
-date getNascimento();
+virtual string getEndereco() = 0;
+virtual void setEndereco(string value) = 0;
 	
-/**
- * @param value
- */
-void setNascimento(date value);
-	
-string getSexo();
-	
-/**
- * @param value
- */
-void setSexo(string value);
-	
-string getEndereco();
-	
-/**
- * @param value
- */
-void setEndereco(string value);
-	
-int getTelefone();
-	
-/**
- * @param value
- */
-void setTelefone(int value);
-private: 
-	string nome;
-	date nascimento;
-	string sexo;
-	string endereco;
-	int telefone;
+virtual int getTelefone() = 0;
+virtual void setTelefone(int value) = 0;
+
 };
 
 #endif //_PESSOA_H

@@ -8,27 +8,57 @@
 #define _PROFESSOR_H
 
 #include "Funcionario.h"
+#include "Pessoa.h"
 #include <iostream>
+#include <string>
+using namespace std;
 
 class Professor: public Funcionario {
-public: 
-	
-string getDisciplina();
-	
-/**
- * @param value
- */
-void setDisciplina(string value);
-	
-vector<int> getTurmas();
-	
-/**
- * @param value
- */
-void setTurmas(vector<int> value);
-private: 
-	string disciplina;
-	vector<int> turmas;
+	private: 
+		string _disciplina;
+		//vector<int> _turmas;
+
+		float _salario;
+		int _registro;
+
+		string _nome;
+		string _dataNascimento;
+		string _sexo;
+		string _endereco;
+		int _telefone;
+
+	public: 
+		Professor(string nome, string dataNascimento, string sexo, string endereco, int telefone, float salario, int registro, string disciplina );
+		//Professor
+		virtual string getDisciplina();
+		virtual void setDisciplina(string value);
+			
+		/*virtual vector<int> getTurmas();
+		virtual void setTurmas(vector<int> value);*/
+
+		//Funcionario
+		virtual float getSalario();
+		virtual void setSalario(float value);
+
+		virtual int getRegistro();
+		virtual void setRegistro(int value);
+
+		//Pessoa
+		virtual string getNome();
+		virtual void setNome(string value);
+
+		virtual string getNascimento();
+		virtual void setNascimento(string value);
+			
+		virtual string getSexo();
+		virtual void setSexo(string value);
+			
+		virtual string getEndereco();
+		virtual void setEndereco(string value);
+			
+		virtual int getTelefone();
+		virtual void setTelefone(int value);
+
 };
 
 #endif //_PROFESSOR_H
