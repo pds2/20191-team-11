@@ -1,4 +1,4 @@
 .vscode/*
-Model/.vscode/*
+*/.vscode/*
 *.gcda
 *.gcno
