@@ -13,32 +13,24 @@
 using namespace std;
 
 class Disciplina {
-public: 
+
+	private: 
+		string _nome;
+		int _identificador;
+		int _cargaHoraria;
 	
-string getNome();
-	
-/**
- * @param value
- */
-void setNome(string value);
-	
-int getIdentificador();
-	
-/**
- * @param value
- */
-void setIdentificador(int value);
-	
-int getCargaHoraria();
-	
-/**
- * @param value
- */
-void setCargaHoraria(int value);
-private: 
-	string nome;
-	int identificador;
-	int cargaHoraria;
+	public: 
+		Disciplina(string nome, int identificador , int cargaHoraria);
+		~Disciplina();
+		string getNome();
+		void setNome(string value);
+			
+		int getIdentificador();
+		void setIdentificador(int value);
+			
+		int getCargaHoraria();
+		void setCargaHoraria(int value);
+
 };
 
 #endif //_DISCIPLINA_H

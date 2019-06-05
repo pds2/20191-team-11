@@ -4,7 +4,7 @@
  */
 
 
-#include "Turma.h"
+#include "../include/Turma.h"
 
 #define EMTPY_VECTOR *(new vector<int>())
 

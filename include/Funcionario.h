@@ -11,12 +11,16 @@
 
 
 class Funcionario: public Pessoa {
-public: 
-	
-virtual float getSalario() = 0;
-virtual void setSalario(float value) = 0;
-virtual int getRegistro() = 0;
-virtual void setRegistro(int value) = 0;
+    private:
+		float _salario;
+		int _registro;
+    public:
+        Funcionario(string nome, string dataNascimento, string sexo, string endereco, long telefone , float salario, int registro);
+        ~Funcionario();
+        float getSalario() ;
+        void setSalario(float value) ;
+        int getRegistro() ;
+        void setRegistro(int value) ;
 
 };
 

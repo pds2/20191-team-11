@@ -13,22 +13,29 @@
 using namespace std;
 
 class Pessoa {
-public: 
-	
-virtual string getNome() = 0;
-virtual void setNome(string value) = 0;
+    private:
+        string _nome;
+		string _dataNascimento;
+		string _sexo;
+		string _endereco;
+		long _telefone;
+    public: 
+        Pessoa(string nome, string dataNascimento, string sexo, string endereco, long telefone);
+        ~Pessoa();
+        string getNome();
+        void setNome(string value);
 
-virtual string getNascimento() = 0;
-virtual void setNascimento(string value) = 0;
-	
-virtual string getSexo() = 0;
-virtual void setSexo(string value) = 0;
-	
-virtual string getEndereco() = 0;
-virtual void setEndereco(string value) = 0;
-	
-virtual long getTelefone() = 0;
-virtual void setTelefone(long value) = 0;
+        string getNascimento();
+        void setNascimento(string value);
+            
+        string getSexo();
+        void setSexo(string value);
+            
+        string getEndereco();
+        void setEndereco(string value);
+            
+        long getTelefone();
+        void setTelefone(long value);
 
 };
 

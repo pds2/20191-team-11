@@ -4,53 +4,41 @@
  */
 
 
-#include "Disciplina.h"
+#include "../include/Disciplina.h"
 
 using namespace std;
 
-/**
- * Disciplina implementation
- */
+Disciplina::~Disciplina(){}
 
+Disciplina::Disciplina(string nome, int identificador , int cargaHoraria){
+    this->_cargaHoraria = cargaHoraria;
+    this->_nome = nome;
+    this->_identificador = identificador;
+}
 
-/**
- * @return string
- */
 string Disciplina::getNome() {
-    return "";
+    return this->_nome;
 }
 
-/**
- * @param value
- */
 void Disciplina::setNome(string value) {
-
+    this->_nome=value;
 }
 
-/**
- * @return int
- */
+
 int Disciplina::getIdentificador() {
-    return 0;
+    return this->_identificador;
 }
 
-/**
- * @param value
- */
 void Disciplina::setIdentificador(int value) {
-
+    this->_identificador = value;
 }
 
-/**
- * @return int
- */
+
 int Disciplina::getCargaHoraria() {
-    return 0;
+    return this->_cargaHoraria;
 }
 
-/**
- * @param value
- */
-void Disciplina::setCargaHoraria(int value) {
 
+void Disciplina::setCargaHoraria(int value) {
+    this->_cargaHoraria;
 }

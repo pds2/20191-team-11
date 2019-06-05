@@ -1,8 +1,8 @@
-#include "Aluno.h"
-#include "Pessoa.h"
-#include "Professor.h"
-#include "Funcionario.h"
-#include "FuncAdm.h"
+#include "../include/Aluno.h"
+#include "../include/Pessoa.h"
+#include "../include/Professor.h"
+#include "../include/Funcionario.h"
+#include "../include/FuncAdm.h"
 #include <iostream>
 #include <string>
 using namespace std;
@@ -25,7 +25,7 @@ int main(){
     std::cout << a.getNome() << std::endl;
 
 
-    Professor p ("Fabio", "25/12/1968", "Masc", "Rua b", 998739085, 5000.20, 40058327, "matematica" );
+   Professor p ("Fabio", "25/12/1968", "Masc", "Rua b", 998739085, 5000.20, 40058327, "matematica" );
     std::cout << p.getNome() <<" "<< p.getNascimento() <<" "<< p.getSexo() <<" "<< p.getEndereco() <<" "<< p.getTelefone()<<" "<<p.getSalario()<<" "<<p.getRegistro()<<" "<<p.getDisciplina() << std::endl;
     p.setSalario(852.50);
     std::cout << p.getSalario() << std::endl;

@@ -4,7 +4,7 @@
  */
 
 
-#include "Historico.h"
+#include "../include/Historico.h"
 
 /**
  * Historico implementation

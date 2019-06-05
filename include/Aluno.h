@@ -19,12 +19,6 @@ class Aluno: public Pessoa {
 		//Historico historico;
 		int _turma;
 
-		string _nome;
-		string _dataNascimento;
-		string _sexo;
-		string _endereco;
-		long _telefone;
-
 	public: 
 
 	Aluno(string nome, string dataNascimento, string sexo, string endereco, long telefone, int matricula, string nomeResponsavelLegal, int turma );
@@ -43,23 +37,6 @@ class Aluno: public Pessoa {
 
 	/*virtual Historico getHistorico();
 	virtual void setHistorico(Historico value);*/
-		
-	/*Pessoa*/
-
-	virtual string getNome();
-	virtual void setNome(string value);
-
-	virtual string getNascimento();
-	virtual void setNascimento(string value);
-		
-	virtual string getSexo();
-	virtual void setSexo(string value);
-		
-	virtual string getEndereco();
-	virtual void setEndereco(string value);
-		
-	virtual long getTelefone();
-	virtual void setTelefone(long value);
 
 };
 
