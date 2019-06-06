@@ -5,14 +5,15 @@
 #include "../include/FuncAdm.h"
 #include <iostream>
 #include <string>
+#include<map>
 using namespace std;
 
 
-void administrativo(){
+void administrativo(map<int, Aluno* > &listaAlunos){
     int value;
 
-    FuncAdm a ("Padrao", "17/04/1967", "masc", "Rua b", 25655474, 1200, 201645, "diretoria" );
-    cout << "Ola o que voce deseja fazer?" << endl;
+    FuncAdm funcAdm ("Padrao", "17/04/1967", "masc", "Rua b", 25655474, 1200, 201645, "diretoria" );
+    cout << "Ola, o que voce deseja fazer?" << endl;
     cout << "Digite 1 para matricular um aluno" << endl;
     cout << "Digite 2 para criar uma turma" << endl;
     cout << "Digite 3 para vincular um professor a uma disciplina" << endl;
@@ -20,9 +21,13 @@ void administrativo(){
     cin >> value;
 
     if (value == 1){
-            a.cadastrarAluno();
-        }
-}
+        Aluno *aluno = funcAdm.cadastrarAluno();
+        int matricula = aluno->getMatricula();
+        listaAlunos.insert( pair<int, Aluno*>(matricula, aluno) ); 
+        cout << listaAlunos[matricula]->getNome();    
+    }
+    
+} 
 
 int main(){
     cout << "Entre com o seu perfil : (Aluno , Professor ou Administrativo)" << endl;
@@ -30,13 +35,16 @@ int main(){
     string perfil;
     cin >> perfil;
 
+    map<int,Aluno*> listaAlunos;
+
+
     if (perfil == "Aluno"){
         cout << "Digite sua matricula";
 
     }else if (perfil == "Professor"){
 
     }else if(perfil == "Administrativo"){
-        administrativo();
+        administrativo(listaAlunos);
     }else {
         cout << "Perfil invalida";
     }

@@ -27,7 +27,7 @@ void FuncAdm::setSetor(string value) {
     this->_setor = value;
 }
 
-void FuncAdm::cadastrarAluno(){
+Aluno* FuncAdm::cadastrarAluno(){
     string nome , dataNascimento , sexo , endereco , nomeResponsavelLegal;
     int matricula , turma;
     long telefone;
@@ -47,6 +47,7 @@ void FuncAdm::cadastrarAluno(){
     cin >> matricula;
     cout << "Digite o id da turma que o aluno sera vinculado" << endl;
     cin >> turma;
-    Aluno c( nome,  dataNascimento,  sexo,  endereco,  telefone,  matricula,  nomeResponsavelLegal,  turma );
-    cout << "O aluno " << c.getNome() << " foi cadastrado com sucesso!";
+    Aluno *aluno = new Aluno( nome,  dataNascimento,  sexo,  endereco,  telefone,  matricula,  nomeResponsavelLegal,  turma );
+    cout << "O aluno " << aluno->getNome() << " foi cadastrado com sucesso!";
+    return aluno;
 }

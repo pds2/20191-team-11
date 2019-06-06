@@ -9,6 +9,7 @@
 
 #include "Funcionario.h"
 #include "Pessoa.h"
+#include "../include/Aluno.h"
 #include <iostream>
 #include <string>
 using namespace std;
@@ -23,7 +24,7 @@ class FuncAdm: public Funcionario {
 		string getSetor();
 		void setSetor(string value);
 
-		void cadastrarAluno();
+		Aluno* cadastrarAluno();
 
 };
 
