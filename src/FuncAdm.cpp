@@ -4,6 +4,7 @@
  */
 #include "../include/FuncAdm.h"
 #include "../include/Pessoa.h"
+#include "../include/Aluno.h"
 #include "../include/Funcionario.h"
 #include <iostream>
 #include <string>
@@ -24,4 +25,28 @@ string FuncAdm::getSetor() {
 
 void FuncAdm::setSetor(string value) {
     this->_setor = value;
+}
+
+void FuncAdm::cadastrarAluno(){
+    string nome , dataNascimento , sexo , endereco , nomeResponsavelLegal;
+    int matricula , turma;
+    long telefone;
+    cout << "Digite o nome do aluno" << endl;
+    cin >> nome;
+    cout << "Digite a data de nascimento" << endl;
+    cin >> dataNascimento;
+    cout << "Digite o sexo do aluno" << endl;
+    cin >> sexo;
+    cout << "Digite o endereco" << endl;
+    cin >> endereco;
+    cout << "Digite o nome do responsavel legal pelo aluno" << endl;
+    cin >> nomeResponsavelLegal;
+    cout << "Digite o telefone do aluno" << endl;
+    cin >> telefone;
+    cout << "Digite a matricula do aluno" << endl;
+    cin >> matricula;
+    cout << "Digite o id da turma que o aluno sera vinculado" << endl;
+    cin >> turma;
+    Aluno c( nome,  dataNascimento,  sexo,  endereco,  telefone,  matricula,  nomeResponsavelLegal,  turma );
+    cout << "O aluno " << c.getNome() << " foi cadastrado com sucesso!";
 }

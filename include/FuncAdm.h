@@ -20,8 +20,10 @@ class FuncAdm: public Funcionario {
 	public: 
 		FuncAdm(string nome, string dataNascimento, string sexo, string endereco, long telefone, float salario, int registro, string setor );
 		~FuncAdm();
-		virtual string getSetor();
-		virtual void setSetor(string value);
+		string getSetor();
+		void setSetor(string value);
+
+		void cadastrarAluno();
 
 };
 
