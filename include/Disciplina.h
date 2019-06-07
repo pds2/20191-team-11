@@ -18,6 +18,7 @@ class Disciplina {
 		string _nome;
 		int _identificador;
 		int _cargaHoraria;
+		string _professor;
 	
 	public: 
 		Disciplina(string nome, int identificador , int cargaHoraria);
@@ -30,6 +31,10 @@ class Disciplina {
 			
 		int getCargaHoraria();
 		void setCargaHoraria(int value);
+
+		string getProfessor();
+
+		void setProfessor(string value);
 
 };
 

@@ -10,18 +10,30 @@
 #include <vector>
 #include <map>
 #include "Historico.h"
+#include <string>
+#include "Disciplina.h"
 
 using namespace std;
 
 class Turma {
+
+
+
+private: 
+	int _identificador;
+	Disciplina _disc[8];
+	vector<int> alunos;
+	map<int,string> horarios;
+	int _serie;
+
 public: 
 	
-vector<int> getDisciplinas();
+Disciplina getDisciplinas(int codigo);
 	
 /**
  * @param value
  */
-void setDisciplinas(vector<int> value);
+void setDisciplinas(string nome, int identificador , int cargaHoraria);
 	
 vector<int> getAlunos();
 	
@@ -50,12 +62,6 @@ int getIdentificador();
  * @param value
  */
 void setIdentificador(int value);
-private: 
-	vector<int> disciplinas;
-	vector<int> alunos;
-	vector<int> professores;
-	map<int,string> horarios;
-	int identificador;
 };
 
 #endif //_TURMA_H

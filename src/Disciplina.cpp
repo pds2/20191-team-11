@@ -25,6 +25,15 @@ void Disciplina::setNome(string value) {
 }
 
 
+string Disciplina::getProfessor() {
+    return this->_professor;
+}
+
+void Disciplina::setProfessor(string value) {
+    this->_professor=value;
+}
+
+
 int Disciplina::getIdentificador() {
     return this->_identificador;
 }

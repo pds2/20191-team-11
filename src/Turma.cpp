@@ -5,6 +5,7 @@
 
 
 #include "../include/Turma.h"
+#include <string>
 
 #define EMTPY_VECTOR *(new vector<int>())
 
@@ -16,16 +17,34 @@
 /**
  * @return vector<int>
  */
-vector<int> Turma::getDisciplinas() {
-    return EMTPY_VECTOR;
+
+Disciplina Turma::getDisciplinas(int codigo) {
+	int i = 0;
+    for (i=0;i<8;i++){
+        if (this->_disc[i].getIdentificador() == codigo){
+            return _disc[i];
+        }
+    }
 }
 
 /**
  * @param value
  */
-void Turma::setDisciplinas(vector<int> value) {
-
+void Turma::setDisciplinas(string nome, int identificador , int cargaHoraria) {
+    int i = 0;
+    bool aux = false;
+    for (i=0;i<8;i++){
+        if (this->_disc[i].getIdentificador() == 0){
+            Disciplina(nome, identificador , cargaHoraria);
+            aux = true;
+            i = 8;
+        }
+    }
+    if (aux == false){
+        // tratar exceção. Limite máximo de turmas excedido.
+    }
 }
+
 
 /**
  * @return vector<int>
