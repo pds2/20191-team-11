@@ -15,6 +15,8 @@ Aluno::~Aluno(){}
 Aluno::Aluno(string nome,string dataNascimento, string sexo, string endereco, long telefone, int matricula, string nomeResponsavelLegal, int turma ) :
     Pessoa(nome,dataNascimento,sexo,endereco,telefone), _matricula(matricula) , _nomeResponsavelLegal(nomeResponsavelLegal) , _turma(turma) {};
 
+Aluno::Aluno(){};
+
 float Aluno::CalculaNota(int disciplina) {
     return 0.0;
 }

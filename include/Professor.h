@@ -20,6 +20,7 @@ class Professor: public Funcionario {
 
 	public: 
 		Professor(string nome, string dataNascimento, string sexo, string endereco, long telefone, float salario, int registro, string disciplina );
+		Professor();
 		~Professor();
 		//Professor
 		virtual string getDisciplina();

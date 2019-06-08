@@ -10,6 +10,8 @@ using namespace std;
 
 Pessoa::~Pessoa(){}
 
+Pessoa::Pessoa(){}
+
 Pessoa::Pessoa(
         string nome, 
         string dataNascimento, 

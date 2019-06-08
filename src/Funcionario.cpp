@@ -11,6 +11,8 @@ using namespace std;
 
 Funcionario::~Funcionario(){}
 
+Funcionario::Funcionario(){}
+
 Funcionario::Funcionario(string nome,string dataNascimento, string sexo, string endereco, long telefone, float salario, int registro ) :
     Pessoa(nome,dataNascimento,sexo,endereco,telefone),  _salario(salario) , _registro(registro) {};
 

@@ -16,6 +16,7 @@ class Funcionario: public Pessoa {
 		int _registro;
     public:
         Funcionario(string nome, string dataNascimento, string sexo, string endereco, long telefone , float salario, int registro);
+        Funcionario();
         ~Funcionario();
         float getSalario() ;
         void setSalario(float value) ;

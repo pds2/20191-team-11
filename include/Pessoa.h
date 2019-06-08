@@ -21,6 +21,7 @@ class Pessoa {
 		long _telefone;
     public: 
         Pessoa(string nome, string dataNascimento, string sexo, string endereco, long telefone);
+        Pessoa();
         ~Pessoa();
         string getNome();
         void setNome(string value);
