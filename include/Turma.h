@@ -11,7 +11,6 @@
 #include <map>
 #include "Historico.h"
 #include <string>
-#include "Disciplina.h"
 
 using namespace std;
 

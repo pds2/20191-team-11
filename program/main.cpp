@@ -29,7 +29,44 @@ void administrativo(map<int, Aluno* > &listaAlunos){
     
 } 
 
+void aluno(){
+
+    
+    int opcaoAluno;
+
+
+        cout << "Escolha uma das opções: " << endl;
+        cout << "1 - Visualizar notas; " << endl;
+        cout << "2 - Visualizar disciplinas matriculadas; " << endl;
+        cout << "3 - Visualizar histórico de notas; " << endl;
+        cout << "4 - Ver mensagens dos professores; " << endl;
+
+        cin >> opcaoAluno;
+
+        switch(opcaoAluno){
+            case (1):
+            break;
+            case (2):
+            break;
+            case (3):
+            break;
+            case (4):
+            // para essa opção precisa ter banco de dados, visto que as msgs não ficarão guardadas no objeto aluno
+            break;
+            default:
+            break;
+        }
+
+
+
+        cout << "Digite sua matricula";
+
+}
+
+
 int main(){
+
+
     cout << "Entre com o seu perfil : (Aluno , Professor ou Administrativo)" << endl;
 
     string perfil;
@@ -38,8 +75,9 @@ int main(){
     map<int,Aluno*> listaAlunos;
 
 
-    if (perfil == "Aluno"){
-        cout << "Digite sua matricula";
+    if (perfil == "Aluno"){     
+
+        aluno();   
 
     }else if (perfil == "Professor"){
 
