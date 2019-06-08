@@ -28,13 +28,13 @@ void Historico::setAluno(int value) {
 /**
  * @return vector<HistoricoAnual>
  */
-vector<HistoricoAnual> Historico::getDesempenho() {
+/*vector<HistoricoAnual> Historico::getDesempenho() {
     return *(new vector<HistoricoAnual>);
 }
-
+*/
 /**
  * @param value
  */
-void Historico::setDesempenho(vector<HistoricoAnual> value) {
+/*void Historico::setDesempenho(vector<HistoricoAnual> value) {
 
-}
+}*/
