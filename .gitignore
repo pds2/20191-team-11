@@ -1,6 +1,6 @@
 .vscode/*
 */.vscode/*
+build/*
+bin/*
 *.gcda
 *.gcno
-*.o
-*.exe
