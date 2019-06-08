@@ -18,31 +18,18 @@
  * @return vector<int>
  */
 
-Disciplina Turma::getDisciplinas(int codigo) {
-	int i = 0;
-    for (i=0;i<8;i++){
-        if (this->_disc[i].getIdentificador() == codigo){
-            return _disc[i];
-        }
-    }
+vector<int>  Turma::getDisciplinas() {
+    return this->_disciplinas;
 }
 
 /**
  * @param value
  */
-void Turma::setDisciplinas(string nome, int identificador , int cargaHoraria) {
-    int i = 0;
-    bool aux = false;
-    for (i=0;i<8;i++){
-        if (this->_disc[i].getIdentificador() == 0){
-            Disciplina(nome, identificador , cargaHoraria);
-            aux = true;
-            i = 8;
-        }
-    }
-    if (aux == false){
-        // tratar exceção. Limite máximo de turmas excedido.
-    }
+void Turma::setDisciplinas(int identificador) {
+
+    //fazer uma consulta ao "banco de dados" e verificar se o código da disciplina já está cadastrado. Senão, exibir exceção.
+    this->_disciplinas.push_back(identificador);
+
 }
 
 

@@ -21,19 +21,18 @@ class Turma {
 
 private: 
 	int _identificador;
-	Disciplina _disc[8];
-	vector<int> alunos;
+	vector<int> _disciplinas;
 	map<int,string> horarios;
 	int _serie;
 
 public: 
 	
-Disciplina getDisciplinas(int codigo);
+vector<int> getDisciplinas();
 	
 /**
  * @param value
  */
-void setDisciplinas(string nome, int identificador , int cargaHoraria);
+void setDisciplinas(int identificador);
 	
 vector<int> getAlunos();
 	
