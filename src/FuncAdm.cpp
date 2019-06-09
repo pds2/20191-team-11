@@ -30,26 +30,32 @@ void FuncAdm::setSetor(string value) {
 }
 
 Aluno* FuncAdm::cadastrarAluno(){
-    string nome , dataNascimento , sexo , endereco , nomeResponsavelLegal;
+    string nome , dataNascimento , sexo , endereco , nomeResponsavelLegal, matriculaString, turmaString, telefoneString;
     int matricula , turma;
     long telefone;
+    // stringstream linestream;
+
     cout << "Digite o nome do aluno" << endl;
-    cin >> nome;
+    cin.ignore();
+    getline(cin,nome);
     cout << "Digite a data de nascimento" << endl;
-    cin >> dataNascimento;
+    getline(cin,dataNascimento);
     cout << "Digite o sexo do aluno" << endl;
-    cin >> sexo;
+    getline(cin,sexo);
     cout << "Digite o endereco" << endl;
-    cin >> endereco;
+    getline(cin,endereco);
     cout << "Digite o nome do responsavel legal pelo aluno" << endl;
-    cin >> nomeResponsavelLegal;
+    getline(cin,nomeResponsavelLegal);
     cout << "Digite o telefone do aluno" << endl;
-    cin >> telefone;
+    getline(cin,telefoneString);
+    telefone = atol(telefoneString.c_str());
     cout << "Digite a matricula do aluno" << endl;
-    cin >> matricula;
+    getline(cin,matriculaString);
+    matricula = atoi(matriculaString.c_str());
     cout << "Digite o id da turma que o aluno sera vinculado" << endl;
-    cin >> turma;
+    getline(cin,turmaString);
+    turma = atoi(turmaString.c_str());
+
     Aluno *aluno = new Aluno( nome,  dataNascimento,  sexo,  endereco,  telefone,  matricula,  nomeResponsavelLegal,  turma );
-    cout << "O aluno " << aluno->getNome() << " foi cadastrado com sucesso!";
     return aluno;
 }
