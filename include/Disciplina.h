@@ -22,6 +22,7 @@ class Disciplina {
 	
 	public: 
 		Disciplina(string nome, int identificador , int cargaHoraria);
+		Disciplina(){};
 		~Disciplina();
 		string getNome();
 		void setNome(string value);

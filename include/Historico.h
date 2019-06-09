@@ -25,10 +25,10 @@ vector<HistoricoAnual> getDesempenho();*/
 /**
  * @param value
  */
-/*void setDesempenho(vector<HistoricoAnual> value);
+//void setDesempenho(vector<HistoricoAnual> value);
 private: 
 	int aluno;
-	vector<HistoricoAnual> desempenho;
-};*/
+	// vector<HistoricoAnual> desempenho;
+};
 
 #endif //_HISTORICO_H

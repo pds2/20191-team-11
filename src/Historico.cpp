@@ -22,7 +22,7 @@ int Historico::getAluno() {
  * @param value
  */
 void Historico::setAluno(int value) {
-
+    this->aluno = value;
 }
 
 /**

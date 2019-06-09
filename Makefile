@@ -6,6 +6,8 @@ BINDIR := bin
 
 MAIN := program/main.cpp
 TESTER := program/tester.cpp
+TEST_DB := program/test_db.cpp
+UNQLITE := third_party/unqlite.c
 
 SRCEXT := cpp
 SOURCES := $(shell find $(SRCDIR) -type f -name "*.$(SRCEXT)")
@@ -13,7 +15,7 @@ OBJECTS := $(patsubst $(SRCDIR)/%,$(OBJDIR)/%,$(SOURCES:.$(SRCEXT)=.o))
 TSTSOURCES := $(shell find $(TSTDIR) -type f -name "*.$(SRCEXT)")
 
 # -g debug, --coverage para cobertura
-CFLAGS := --coverage -g -Wall -O3 -std=c++11
+CFLAGS := --coverage -g -Wall -O3 -std=c++11 -fpermissive
 INC := -I include/ -I third_party/
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.$(SRCEXT)

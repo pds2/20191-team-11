@@ -8,6 +8,8 @@
 
 using namespace std;
 
+Disciplina::Disciplina(){}
+
 Disciplina::~Disciplina(){}
 
 Disciplina::Disciplina(string nome, int identificador , int cargaHoraria){

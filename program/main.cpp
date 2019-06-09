@@ -3,9 +3,11 @@
 #include "../include/Professor.h"
 #include "../include/Funcionario.h"
 #include "../include/FuncAdm.h"
+#include "DBClient.h"
 #include <iostream>
 #include <string>
 #include<map>
+
 using namespace std;
 
 
@@ -66,14 +68,12 @@ void aluno(){
 
 int main(){
 
-
     cout << "Entre com o seu perfil : (Aluno , Professor ou Administrativo)" << endl;
 
     string perfil;
     cin >> perfil;
 
     map<int,Aluno*> listaAlunos;
-
 
     if (perfil == "Aluno"){     
 
