@@ -17,10 +17,15 @@ map<int,Professor*> listaProfessores;
 map<int,FuncAdm*> listaFuncAdm;
 
 void populaTeste(){
-    Aluno *a = new Aluno("Isa", "14/10/1997", "Fem", "Rua a ", 992739097, 2016058328, "Edna", 2014);
-    Aluno *b = new Aluno("Gabriel Fonseca", "13/10/1988", "Mas", "Rua Timbiras", 31988123351, 2017023439, "Delcio", 2014);
-    listaAlunos.insert(pair<int, Aluno*>(a->getMatricula(), a));
-    listaAlunos.insert(pair<int, Aluno*>(b->getMatricula(), b));
+    Aluno *a1 = new Aluno ("Isabela","14/10/1997","Feminino","Rua ABC , 520 - AP 02, Contagem- MG",25655847,1,"Edna P Souza",2013);
+    Aluno *a2 = new Aluno("Gabriel Fonseca", "13/10/1988", "Masculino", "Rua Timbiras", 988123351, 2, "Delcio", 2014);
+    listaAlunos.insert( pair<int, Aluno*>(a1->getMatricula(), a1) ); 
+    listaAlunos.insert( pair<int, Aluno*>(a2->getMatricula(), a2) );
+   
+    FuncAdm *funcAdm1 = new FuncAdm ("Gisele", "17/04/1967", "Feminino", "Rua Garcia Rodrigues, 901", 25655474, 1200, 1, "Secretaria" );
+    FuncAdm *funcAdm2 = new FuncAdm ("Joao", "20/05/1964", "Masculino", "Rua Nova Granada, 203", 32655474, 1200, 2, "Secretaria" );
+    listaFuncAdm.insert( pair<int, FuncAdm*>(funcAdm1->getRegistro(), funcAdm1) );
+    listaFuncAdm.insert( pair<int, FuncAdm*>(funcAdm2->getRegistro(), funcAdm2) );
 }
 
 void listarAlunos(){
