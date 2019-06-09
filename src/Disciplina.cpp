@@ -8,14 +8,15 @@
 
 using namespace std;
 
-Disciplina::Disciplina(){}
+// Disciplina::Disciplina(){}
 
 Disciplina::~Disciplina(){}
 
-Disciplina::Disciplina(string nome, int identificador , int cargaHoraria){
+Disciplina::Disciplina(string nome, int identificador , int cargaHoraria, string professor){
     this->_cargaHoraria = cargaHoraria;
     this->_nome = nome;
     this->_identificador = identificador;
+    this->_professor = professor;
 }
 
 string Disciplina::getNome() {
@@ -51,5 +52,5 @@ int Disciplina::getCargaHoraria() {
 
 
 void Disciplina::setCargaHoraria(int value) {
-    this->_cargaHoraria;
+    this->_cargaHoraria = value;
 }

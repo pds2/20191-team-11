@@ -15,7 +15,7 @@ OBJECTS := $(patsubst $(SRCDIR)/%,$(OBJDIR)/%,$(SOURCES:.$(SRCEXT)=.o))
 TSTSOURCES := $(shell find $(TSTDIR) -type f -name "*.$(SRCEXT)")
 
 # -g debug, --coverage para cobertura
-CFLAGS := --coverage -g -Wall -O3 -std=c++11 -fpermissive
+CFLAGS := --coverage -g -Wall -O3 -std=c++11
 INC := -I include/ -I third_party/
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.$(SRCEXT)

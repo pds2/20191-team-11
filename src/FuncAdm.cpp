@@ -13,6 +13,8 @@ using namespace std;
  * FuncAdm implementation
  */
 
+FuncAdm::FuncAdm(){}
+
 FuncAdm::~FuncAdm(){}
 
 FuncAdm::FuncAdm(string nome, string dataNascimento, string sexo, string endereco, long telefone, float salario, int registro, string setor ) :

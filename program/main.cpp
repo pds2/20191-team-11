@@ -3,7 +3,6 @@
 #include "../include/Professor.h"
 #include "../include/Funcionario.h"
 #include "../include/FuncAdm.h"
-#include "DBClient.h"
 #include <iostream>
 #include <string>
 #include<map>

@@ -4,7 +4,7 @@
 string nome = nome;
 int identificador = 123;
 int carga_horaria = 666;
-string professor = "Robert Johnson"
+string professor = "Robert Johnson";
 
 TEST_CASE("Teste Disciplina - Declaracão") {
     CHECK_NOTHROW(Disciplina a (nome, identificador, carga_horaria, professor));
