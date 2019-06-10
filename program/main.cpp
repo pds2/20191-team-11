@@ -8,7 +8,6 @@
 #include "../include/ManagerProfessor.h"
 #include "../include/ManagerDisciplina.h"
 #include "../include/MenuAdministrativo.h"
-#include "../include/Relatorio.h"
 #include <iostream>
 #include <string>
 #include <map>

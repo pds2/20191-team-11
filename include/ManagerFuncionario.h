@@ -12,6 +12,7 @@ class ManagerFuncionario : public Manager<FuncAdm> {
         ManagerFuncionario();
         ManagerFuncionario(string,map<int,FuncAdm*>);
         ~ManagerFuncionario();
+        void cadastrarFuncionario();
 };
 
 #endif

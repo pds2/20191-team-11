@@ -10,6 +10,7 @@ class ManagerAluno : public Manager<Aluno> {
         ManagerAluno();
         ManagerAluno(string,map<int,Aluno*>);
         ~ManagerAluno();
+        void cadastrarAluno();
 };
 
 #endif
