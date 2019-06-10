@@ -1,5 +1,5 @@
-#include "ManagerAluno.h"
-#include "Manager.h"
+#include "../include/ManagerAluno.h"
+#include "../include/Manager.h"
 
 ManagerAluno::ManagerAluno() : Manager<Aluno>() {}
 

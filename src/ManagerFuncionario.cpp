@@ -1,5 +1,5 @@
-#include "ManagerFuncionario.h"
-#include "Manager.h"
+#include "../include/ManagerFuncionario.h"
+#include "../include/Manager.h"
 
 ManagerFuncionario::ManagerFuncionario() : Manager<FuncAdm>() {}
 

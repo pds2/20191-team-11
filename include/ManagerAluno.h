@@ -1,8 +1,8 @@
 #ifndef MAN_ALUNO
 #define MAN_ALUNO
 
-#include "Manager.h"
-#include "Aluno.h"
+#include "../include/Manager.h"
+#include "../include/Aluno.h"
 #include <map>
 
 class ManagerAluno : public Manager<Aluno> {

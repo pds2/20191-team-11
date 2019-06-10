@@ -1,8 +1,8 @@
 #ifndef MAN_DISCIPLINA
 #define MAN_DISCIPLINA
 
-#include "Manager.h"
-#include "Disciplina.h"
+#include "../include/Manager.h"
+#include "../include/Disciplina.h"
 #include <map>
 
 

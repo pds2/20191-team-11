@@ -7,6 +7,8 @@
 #include "../include/ManagerAluno.h"
 #include "../include/ManagerProfessor.h"
 #include "../include/ManagerDisciplina.h"
+#include "../include/MenuAdministrativo.h"
+#include "../include/Relatorio.h"
 #include <iostream>
 #include <string>
 #include <map>
@@ -35,8 +37,8 @@ void populaTeste(){
     mAluno.setItens(listaAlunos);
     mAluno.setNomeRelatorio("Alunos");
 
-    FuncAdm *funcAdm1 = new FuncAdm ("Gisele", "17/04/1967", "Feminino", "Rua Garcia Rodrigues, 901", 25655474, 1200, 1, "Secretaria" );
-    FuncAdm *funcAdm2 = new FuncAdm ("Joao", "20/05/1964", "Masculino", "Rua Nova Granada, 203", 32655474, 1200, 2, "Secretaria" );
+    FuncAdm *funcAdm1 = new FuncAdm ("Ananda", "17/04/1967", "Feminino", "Rua Garcia Rodrigues, 901", 25655474, 1200, 1, "Secretaria" );
+    FuncAdm *funcAdm2 = new FuncAdm ("Juca", "20/05/1964", "Masculino", "Rua Nova Granada, 203", 32655474, 1200, 2, "Secretaria" );
     listaFuncAdm.insert( pair<int, FuncAdm*>(funcAdm1->getId(), funcAdm1) );
     listaFuncAdm.insert( pair<int, FuncAdm*>(funcAdm2->getId(), funcAdm2) );
     mFuncionario.setItens(listaFuncAdm);
@@ -50,42 +52,11 @@ void populaTeste(){
     mProfessor.setNomeRelatorio("Professores");
 }
 
-void gerarRelatorios(){
-    int option;
-    bool sair = false;
 
-    while(!sair){
-        cout << "Relatórios" << endl;
-        cout << "[1] Listar alunos" << endl;
-        cout << "[2] Listar funcionarios" << endl;
-        cout << "[3] Listar professores" << endl;
-        cout << "[0] Voltar para menu anterior" << endl;
-        cin >> option;
-
-        switch(option){
-            case 0:
-                sair = true;
-                break;
-            case 1:
-                mAluno.geraRelatorio();
-                break;
-            case 2:
-                mFuncionario.geraRelatorio();
-                break;
-            case 3:
-                mProfessor.geraRelatorio();
-                break;
-            default:
-                cout << "Opção não existe!" << endl;
-        }
-    }
-}
 
 
 
 void aluno(){
-
-    
     int opcaoAluno;
 
     cout << "Escolha uma das opções: " << endl;
@@ -115,63 +86,7 @@ void aluno(){
 
 void professor(){}
 
-void administrativo(){
-    int value;
-    FuncAdm *funcAdm;
 
-    cout << "Digite seu número de registro: ";
-    cin >> value;
-
-    if ( mFuncionario.getItens()->find(value) == mFuncionario.getItens()->end() ) {
-        cout << "Funcionário não cadastrado! Utilizando padrão." << endl;
-        funcAdm = new FuncAdm("Padrao", "17/04/1967", "masc", "Rua b", 25655474, 1200, 201645, "diretoria" );
-    } else {
-        cout << "Funcionário encontrado!" << endl;
-        funcAdm = mFuncionario.getItem(value);
-    }
-
-    cout << "Nome: " << funcAdm->getNome() << endl;
-    cout << "Setor: " << funcAdm->getSetor() << endl << endl;
-    
-    bool sair = false;
-    while(!sair){
-        cout << "Ola, o que voce deseja fazer?" << endl;
-        cout << "[1] Matricular um aluno" << endl;
-        cout << "[2] Criar uma turma" << endl;
-        cout << "[3] Vincular um professor a uma disciplina" << endl;
-        cout << "[4] Montar grade de horarios" << endl;
-        cout << "[5] Cadastrar funcionário" << endl;
-        cout << "[6] Gerar relatórios" << endl;
-        cout << "[0] Voltar para menu principal" << endl;
-        cin >> value;
-
-        switch(value){
-            case 0:
-                sair = true;
-                break;
-            case 1: 
-                {
-                    Aluno *aluno = funcAdm->cadastrarAluno();
-                    int matricula = aluno->getMatricula();
-                    if ( mAluno.getItens()->find(matricula) != mAluno.getItens()->end() ) {
-                        cout << "Aluno já cadastrado com matrícula " << matricula << endl;
-                        delete aluno;
-                    } else {
-                        mAluno.insereItem(matricula, aluno);
-                        cout << "O aluno " << aluno->getNome() << " com matricula " << aluno->getMatricula() << " foi cadastrado com sucesso!" << endl;
-                    }
-                }
-                break;
-            case 6:
-                gerarRelatorios();
-                break;
-            default:
-                cout << "Opção não cadastrada!" << endl;
-                break;
-        }
-    }
-    
-}
 
 int main(){
 
@@ -200,7 +115,7 @@ int main(){
                 professor();
                 break;
             case 3:
-                administrativo();
+                administrativo(mFuncionario , mAluno, mProfessor,mDisciplina);
                 break;
             case 4:
                 populaTeste();

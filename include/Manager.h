@@ -56,7 +56,12 @@ map<int,T*>* Manager<T>::getItens(){
 
 template <class T>
 T* Manager<T>::getItem(int value){
-    return (this->itens[value]);
+    if (this->itens[value] == 0) {
+        throw std::invalid_argument("Nao encontrado ! Verifique a matricula/ registro digitado.");
+    } else {
+        return (this->itens[value]);
+    }
+    
 }
 
 template <class T>

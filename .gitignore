@@ -4,3 +4,5 @@ build/*
 bin/*
 *.gcda
 *.gcno
+*.o
+*.exe

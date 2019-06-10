@@ -1,8 +1,8 @@
 #ifndef MAN_PROFESSOR
 #define MAN_PROFESSOR
 
-#include "Manager.h"
-#include "Professor.h"
+#include "../include/Manager.h"
+#include "../include/Professor.h"
 #include <map>
 
 

@@ -1,5 +1,5 @@
-#include "ManagerProfessor.h"
-#include "Manager.h"
+#include "../include/ManagerProfessor.h"
+#include "../include/Manager.h"
 
 ManagerProfessor::ManagerProfessor() : Manager<Professor>() {}
 

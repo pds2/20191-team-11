@@ -6,6 +6,7 @@
 #include "../include/Pessoa.h"
 #include "../include/Aluno.h"
 #include "../include/Funcionario.h"
+#include "../include/ManagerAluno.h"
 #include <iostream>
 #include <string>
 using namespace std;
@@ -29,14 +30,19 @@ void FuncAdm::setSetor(string value) {
     this->_setor = value;
 }
 
-Aluno* FuncAdm::cadastrarAluno(){
+Aluno* FuncAdm::cadastrarAluno(ManagerAluno &mAluno){
     string nome , dataNascimento , sexo , endereco , nomeResponsavelLegal, matriculaString, turmaString, telefoneString;
     int matricula , turma;
     long telefone;
-    // stringstream linestream;
-
-    cout << "Digite o nome do aluno" << endl;
+    
+    cout << "Digite a matricula do aluno" << endl;
     cin.ignore();
+    getline(cin,matriculaString);
+    matricula = atoi(matriculaString.c_str());
+    if ( mAluno.getItens()->find(matricula) != mAluno.getItens()->end() ) {
+        throw std::invalid_argument("Ja existe um aluno com a matricula " + matriculaString);
+    }else{
+    cout << "Digite o nome do aluno" << endl;
     getline(cin,nome);
     cout << "Digite a data de nascimento" << endl;
     getline(cin,dataNascimento);
@@ -49,13 +55,11 @@ Aluno* FuncAdm::cadastrarAluno(){
     cout << "Digite o telefone do aluno" << endl;
     getline(cin,telefoneString);
     telefone = atol(telefoneString.c_str());
-    cout << "Digite a matricula do aluno" << endl;
-    getline(cin,matriculaString);
-    matricula = atoi(matriculaString.c_str());
     cout << "Digite o id da turma que o aluno sera vinculado" << endl;
     getline(cin,turmaString);
     turma = atoi(turmaString.c_str());
 
     Aluno *aluno = new Aluno( nome,  dataNascimento,  sexo,  endereco,  telefone,  matricula,  nomeResponsavelLegal,  turma );
-    return aluno;
+    return aluno;                             
+    }
 }

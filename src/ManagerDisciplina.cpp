@@ -1,5 +1,5 @@
-#include "ManagerDisciplina.h"
-#include "Manager.h"
+#include "../include/ManagerDisciplina.h"
+#include "../include/Manager.h"
 
 ManagerDisciplina::ManagerDisciplina() : Manager<Disciplina>() {}
 
