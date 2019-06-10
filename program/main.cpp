@@ -53,9 +53,6 @@ void populaTeste(){
 }
 
 
-
-
-
 void aluno(){
     int opcaoAluno;
 
