@@ -24,6 +24,8 @@ class Aluno: public Pessoa {
 	Aluno(string nome, string dataNascimento, string sexo, string endereco, long telefone, int matricula, string nomeResponsavelLegal, int turma );
 	Aluno();
 	~Aluno();
+	int getId();
+
 	float CalculaNota(int disciplina);
 	float CalculaAproveitamento(int disciplina);
 

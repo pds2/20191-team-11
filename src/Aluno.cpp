@@ -29,6 +29,10 @@ void Aluno::setMatricula(int value) {
     this->_matricula = value;
 }
 
+int Aluno::getId(){
+    return this->_matricula;
+}
+
 string Aluno::getNomeResponsavelLegal() {
     return this->_nomeResponsavelLegal;
 }

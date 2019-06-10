@@ -30,3 +30,7 @@ int Funcionario::getRegistro(){
 void Funcionario::setRegistro(int value){
     this->_registro = value;
 }
+
+int Funcionario::getId(){
+    return this->_registro;
+}

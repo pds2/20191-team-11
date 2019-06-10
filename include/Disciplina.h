@@ -24,6 +24,7 @@ class Disciplina {
 		Disciplina(string nome, int identificador , int cargaHoraria, string professor);
 		Disciplina(){};
 		~Disciplina();
+		int getId();
 		string getNome();
 		void setNome(string value);
 			

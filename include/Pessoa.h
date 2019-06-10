@@ -38,6 +38,7 @@ class Pessoa {
         long getTelefone();
         void setTelefone(long value);
 
+        int getId();
 };
 
 #endif //_PESSOA_H

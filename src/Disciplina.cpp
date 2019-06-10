@@ -23,6 +23,10 @@ string Disciplina::getNome() {
     return this->_nome;
 }
 
+int Disciplina::getId(){
+    return this->_identificador;
+}
+
 void Disciplina::setNome(string value) {
     this->_nome=value;
 }
