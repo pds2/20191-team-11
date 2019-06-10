@@ -12,6 +12,7 @@ class ManagerDisciplina : public Manager<Disciplina> {
         ManagerDisciplina();
         ManagerDisciplina(string,map<int,Disciplina*>);
         ~ManagerDisciplina();
+        void cadastrar();
 };
 
 #endif

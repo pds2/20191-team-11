@@ -7,7 +7,7 @@ ManagerAluno::ManagerAluno(string nome,map<int,Aluno*> funcionarios) : Manager<A
 
 ManagerAluno::~ManagerAluno(){}
 
-void ManagerAluno::cadastrarAluno(){
+void ManagerAluno::cadastrar(){
     string nome , dataNascimento , sexo , endereco , nomeResponsavelLegal, matriculaString, turmaString, telefoneString;
     int matricula , turma;
     long telefone;

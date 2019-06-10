@@ -7,7 +7,7 @@ ManagerFuncionario::ManagerFuncionario(string nome,map<int,FuncAdm*> funcionario
 
 ManagerFuncionario::~ManagerFuncionario(){}
 
-void ManagerFuncionario::cadastrarFuncionario(){
+void ManagerFuncionario::cadastrar(){
     string nome , dataNascimento , sexo , endereco, telefoneString, salarioString, registroString, setor;
     int registro;
     long telefone;

@@ -12,6 +12,7 @@ class ManagerProfessor : public Manager<Professor> {
         ManagerProfessor();
         ManagerProfessor(string,map<int,Professor*>);
         ~ManagerProfessor();
+        void cadastrar();
 };
 
 #endif

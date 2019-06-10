@@ -21,6 +21,7 @@ class Manager{
         T* insereItem(int,T*);
         void removeItem(int);
         void geraRelatorio();
+        virtual void cadastrar(){};
     private:
         string nome;
         map<int,T*> itens;
@@ -29,6 +30,9 @@ class Manager{
 
 // template <class T>
 // Manager<T>::Manager(){};
+
+// template <class T>
+// void Manager<T>::cadastrar(){}
 
 template <class T>
 Manager<T>::Manager(string nome, map<int,T*> itens){

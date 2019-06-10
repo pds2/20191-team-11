@@ -36,14 +36,21 @@ void cadastros(ManagerFuncionario &mFuncionario , ManagerAluno &mAluno, ManagerP
                 break;
             case 1:
                 try{
-                    mAluno.cadastrarAluno();
+                    mAluno.cadastrar();
                 } catch (const std::invalid_argument& e){
                     cout << e.what() << endl;
                 }
                 break;
             case 2:
                 try{
-                    mFuncionario.cadastrarFuncionario();
+                    mFuncionario.cadastrar();
+                } catch (const std::invalid_argument& e){
+                    cout << e.what() << endl;
+                }
+                break;
+            case 3:
+                try{
+                    mProfessor.cadastrar();
                 } catch (const std::invalid_argument& e){
                     cout << e.what() << endl;
                 }
@@ -95,6 +102,7 @@ void administrativo(ManagerFuncionario &mFuncionario , ManagerAluno &mAluno, Man
 
     cout << "Digite seu número de registro: ";
     cin >> value;
+    cerr << "cheguei" << endl;
     try {
         funcAdm = mFuncionario.getItem(value);
         cout << "Nome: " << funcAdm->getNome() << endl;
