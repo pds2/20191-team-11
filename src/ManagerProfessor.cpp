@@ -7,9 +7,9 @@ ManagerProfessor::ManagerProfessor(string nome,map<int,Professor*> funcionarios)
 
 ManagerProfessor::~ManagerProfessor(){}
 
-void ManagerProfessor::cadastrar(){
-    string nome , dataNascimento , sexo , endereco, telefoneString, salarioString, registroString, disciplina;
-    int registro;
+void ManagerProfessor::cadastrar(ManagerDisciplina &mDisciplina){
+    string nome , dataNascimento , sexo , endereco, telefoneString, salarioString, registroString , disciplina;
+    int registro , idDisciplina;
     long telefone;
     float salario;
     
@@ -24,7 +24,7 @@ void ManagerProfessor::cadastrar(){
         getline(cin,nome);
         cout << "Digite a data de nascimento" << endl;
         getline(cin,dataNascimento);
-        cout << "Digite o sexo do funcionário" << endl;
+        cout << "Digite o sexo do professor" << endl;
         getline(cin,sexo);
         cout << "Digite o endereco" << endl;
         getline(cin,endereco);
@@ -34,8 +34,15 @@ void ManagerProfessor::cadastrar(){
         cout << "Digite o salario do professor" << endl;
         getline(cin,salarioString);
         salario = atof(salarioString.c_str());
-        cout << "Digite a disciplina do professor" << endl;
+        cout << "Digite o id da disciplina que deseja vincular o professor: " << endl;
+        mDisciplina.geraRelatorio();
         getline(cin,disciplina);
-        this->insereItem(registro,new Professor(nome,  dataNascimento,  sexo,  endereco,  telefone,  salario,  registro,  disciplina ));
+        idDisciplina = atoi(disciplina.c_str());
+        if (mDisciplina.getItem(idDisciplina)){
+            this->insereItem(registro,new Professor(nome,  dataNascimento,  sexo,  endereco,  telefone,  salario,  registro,  idDisciplina ));
+            cout << "Professor "<<nome<<" cadastrado com sucesso!" << endl;
+        }else {
+            throw std::invalid_argument("Nao existe disciplina cadastrada com o id " + disciplina + ". Liste as disciplinas disponiveis e tente novamente!");
+        }
     }
 }

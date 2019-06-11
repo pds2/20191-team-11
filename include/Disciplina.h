@@ -21,7 +21,7 @@ class Disciplina {
 		string _professor;
 	
 	public: 
-		Disciplina(string nome, int identificador , int cargaHoraria, string professor);
+		Disciplina(string nome, int identificador , int cargaHoraria);
 		Disciplina(){};
 		~Disciplina();
 		int getId();
@@ -33,10 +33,6 @@ class Disciplina {
 			
 		int getCargaHoraria();
 		void setCargaHoraria(int value);
-
-		string getProfessor();
-
-		void setProfessor(string value);
 
 };
 

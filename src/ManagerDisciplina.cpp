@@ -8,7 +8,7 @@ ManagerDisciplina::ManagerDisciplina(string nome,map<int,Disciplina*> disciplina
 ManagerDisciplina::~ManagerDisciplina(){}
 
 void ManagerDisciplina::cadastrar(){
-    string nome , identificadorString , cargaHorariaString , professor;
+    string nome , identificadorString , cargaHorariaString ;
     int identificador, cargaHoraria;
     
     cout << "Digite o identificador da disciplina" << endl;
@@ -23,8 +23,7 @@ void ManagerDisciplina::cadastrar(){
         cout << "Digite a carga horária" << endl;
         getline(cin,cargaHorariaString);
         cargaHoraria = atoi(cargaHorariaString.c_str());
-        cout << "Digite o professor da disciplina" << endl;
-        getline(cin,professor);
-        this->insereItem(identificador,new Disciplina(nome,  identificador, cargaHoraria,  professor));
+        this->insereItem(identificador,new Disciplina(nome,  identificador, cargaHoraria));
+        cout << "Disciplina "<<nome<<" cadastrada com sucesso!" << endl;
     }
 }

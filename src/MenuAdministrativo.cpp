@@ -50,7 +50,7 @@ void cadastros(ManagerFuncionario &mFuncionario , ManagerAluno &mAluno, ManagerP
                 break;
             case 3:
                 try{
-                    mProfessor.cadastrar();
+                    mProfessor.cadastrar(mDisciplina);
                 } catch (const std::invalid_argument& e){
                     cout << e.what() << endl;
                 }
@@ -124,7 +124,6 @@ void administrativo(ManagerFuncionario &mFuncionario , ManagerAluno &mAluno, Man
 
     cout << "Digite seu número de registro: ";
     cin >> value;
-    cerr << "cheguei" << endl;
     try {
         funcAdm = mFuncionario.getItem(value);
         cout << "Nome: " << funcAdm->getNome() << endl;
@@ -135,8 +134,6 @@ void administrativo(ManagerFuncionario &mFuncionario , ManagerAluno &mAluno, Man
             cout << "Ola, o que voce deseja fazer?" << endl;
             cout << "[1] Cadastros" << endl;
             cout << "[2] Gerar relatórios" << endl;
-            cout << "[3] Vincular um professor a uma disciplina" << endl;
-            // cout << "[4] Montar grade de horarios" << endl;
             cout << "[0] Voltar para menu anterior" << endl;
             cin >> value;
 
@@ -150,7 +147,6 @@ void administrativo(ManagerFuncionario &mFuncionario , ManagerAluno &mAluno, Man
                 case 2:
                     gerarRelatorios(mFuncionario, mAluno , mProfessor,  mDisciplina, mTurma);
                     break;
-                // case 3:
 
                 default:
                     cout << "Opção não cadastrada!" << endl;

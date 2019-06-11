@@ -8,6 +8,7 @@
 #include "../include/ManagerProfessor.h"
 #include "../include/ManagerDisciplina.h"
 #include "../include/ManagerTurma.h"
+#include "../include/MenuProfessor.h"
 #include "../include/MenuAdministrativo.h"
 #include <iostream>
 #include <string>
@@ -17,7 +18,6 @@
 
 using namespace std;
 using std::left;
-
 
 
 ManagerFuncionario mFuncionario;
@@ -33,6 +33,13 @@ void populaTeste(){
     map<int,Disciplina*> listaDisciplinas;
     map<int,Turma*> listaTurmas;
 
+    Disciplina *dis1 = new Disciplina("Matemática",  1, 30);
+    Disciplina *dis2 = new Disciplina("Portugues",  2, 30);
+    listaDisciplinas.insert( pair<int, Disciplina*>(dis1->getId(), dis1) );
+    listaDisciplinas.insert( pair<int, Disciplina*>(dis2->getId(), dis2) );
+    mDisciplina.setItens(listaDisciplinas);
+    mDisciplina.setNomeRelatorio("Disciplinas");
+
     Aluno *a1 = new Aluno ("Isabela","14/10/1997","Feminino","Rua ABC , 520 - AP 02, Contagem- MG",25655847,1,"Edna P Souza",2013);
     Aluno *a2 = new Aluno("Gabriel Fonseca", "13/10/1988", "Masculino", "Rua Timbiras", 988123351, 2, "Delcio", 2014);
     listaAlunos.insert( pair<int, Aluno*>(a1->getId(), a1) ); 
@@ -47,19 +54,12 @@ void populaTeste(){
     mFuncionario.setItens(listaFuncAdm);
     mFuncionario.setNomeRelatorio("Funcionários");
 
-    Professor *prof1 = new Professor ("Gisele", "17/04/1967", "Feminino", "Rua Garcia Rodrigues, 901", 25655474, 1200, 1, "Secretaria" );
-    Professor *prof2 = new Professor ("Joao", "20/05/1964", "Masculino", "Rua Nova Granada, 203", 32655474, 1200, 2, "Secretaria" );
+    Professor *prof1 = new Professor ("Gisele", "17/04/1967", "Feminino", "Rua Garcia Rodrigues, 901", 25655474, 1200, 1, 1 );
+    Professor *prof2 = new Professor ("Joao", "20/05/1964", "Masculino", "Rua Nova Granada, 203", 32655474, 1200, 2, 2 );
     listaProfessores.insert( pair<int, Professor*>(prof1->getId(), prof1) );
     listaProfessores.insert( pair<int, Professor*>(prof2->getId(), prof2) );
     mProfessor.setItens(listaProfessores);
     mProfessor.setNomeRelatorio("Professores");
-
-    Disciplina *dis1 = new Disciplina("Matemática",  1, 30,  "Gisele");
-    Disciplina *dis2 = new Disciplina("Portugues",  2, 30,  "Joao");
-    listaDisciplinas.insert( pair<int, Disciplina*>(dis1->getId(), dis1) );
-    listaDisciplinas.insert( pair<int, Disciplina*>(dis2->getId(), dis2) );
-    mDisciplina.setItens(listaDisciplinas);
-    mDisciplina.setNomeRelatorio("Disciplinas");
 
     Turma *tur1 = new Turma("Primeira série",  1);
     Turma *tur2 = new Turma("Segunda série",  2);
@@ -98,10 +98,6 @@ void aluno(){
 
 }
 
-void professor(){}
-
-
-
 int main(){
 
     bool sair = false;
@@ -126,7 +122,7 @@ int main(){
                 aluno();
                 break;
             case 2:
-                professor();
+                professor(mAluno, mProfessor , mDisciplina,mTurma);
                 break;
             case 3:
                 administrativo(mFuncionario , mAluno, mProfessor,mDisciplina,mTurma);

@@ -12,11 +12,10 @@ using namespace std;
 
 Disciplina::~Disciplina(){}
 
-Disciplina::Disciplina(string nome, int identificador , int cargaHoraria, string professor){
+Disciplina::Disciplina(string nome, int identificador , int cargaHoraria){
     this->_cargaHoraria = cargaHoraria;
     this->_nome = nome;
     this->_identificador = identificador;
-    this->_professor = professor;
 }
 
 string Disciplina::getNome() {
@@ -30,16 +29,6 @@ int Disciplina::getId(){
 void Disciplina::setNome(string value) {
     this->_nome=value;
 }
-
-
-string Disciplina::getProfessor() {
-    return this->_professor;
-}
-
-void Disciplina::setProfessor(string value) {
-    this->_professor=value;
-}
-
 
 int Disciplina::getIdentificador() {
     return this->_identificador;

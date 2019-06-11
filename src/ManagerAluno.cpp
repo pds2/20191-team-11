@@ -36,5 +36,6 @@ void ManagerAluno::cadastrar(){
         getline(cin,turmaString);
         turma = atoi(turmaString.c_str());
         this->insereItem(matricula,new Aluno( nome,  dataNascimento,  sexo,  endereco,  telefone,  matricula,  nomeResponsavelLegal,  turma ));
+        cout << "Aluno "<<nome<<" cadastrado com sucesso!" << endl;
     }
 }

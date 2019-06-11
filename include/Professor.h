@@ -15,19 +15,15 @@ using namespace std;
 
 class Professor: public Funcionario {
 	private: 
-		string _disciplina;
-		//vector<int> _turmas;
+		int _idDisciplina;
 
 	public: 
-		Professor(string nome, string dataNascimento, string sexo, string endereco, long telefone, float salario, int registro, string disciplina );
+		Professor(string nome, string dataNascimento, string sexo, string endereco, long telefone, float salario, int registro, int idDisciplina );
 		Professor();
 		~Professor();
 		//Professor
-		virtual string getDisciplina();
-		virtual void setDisciplina(string value);
-			
-		/*virtual vector<int> getTurmas();
-		virtual void setTurmas(vector<int> value);*/
+		virtual int getDisciplina();
+		virtual void setDisciplina(int value);
 
 };
 

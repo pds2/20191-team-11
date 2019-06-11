@@ -16,21 +16,13 @@ Professor::~Professor(){}
 Professor::Professor(){}
 
 Professor::Professor(string nome, string dataNascimento, string sexo, string endereco, long telefone, float salario,
-int registro, string disciplina ):
-    Funcionario(nome,dataNascimento,sexo,endereco,telefone,salario,registro), _disciplina(disciplina) {};
+int registro, int idDisciplina ):
+    Funcionario(nome,dataNascimento,sexo,endereco,telefone,salario,registro), _idDisciplina(idDisciplina) {};
 
-string Professor::getDisciplina() {
-    return this->_disciplina;
+int Professor::getDisciplina() {
+    return this->_idDisciplina;
 }
 
-void Professor::setDisciplina(string value) {
-    this->_disciplina = value;
+void Professor::setDisciplina(int value) {
+    this->_idDisciplina = value;
 }
-
-/*vector<int> Professor::getTurmas() {
-    return null;
-}
-
-void Professor::setTurmas(vector<int> value) {
-
-}*/
