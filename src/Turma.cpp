@@ -6,85 +6,82 @@
 
 #include "../include/Turma.h"
 #include <string>
+#include <stdexcept>
+
+using namespace std;
 
 #define EMTPY_VECTOR *(new vector<int>())
 
-/**
- * Turma implementation
- */
+Turma::Turma(){}
 
+Turma::~Turma(){}
 
-/**
- * @return vector<int>
- */
+Turma::Turma(string nome,int identificador, set<int> disciplinas, set<int> alunos){
+    this->nome = nome;
+    this->_identificador = identificador;
+    this->_disciplinas = disciplinas;
+    this->_alunos = alunos;
+}
 
-vector<int>  Turma::getDisciplinas() {
+Turma::Turma(string nome, int identificador){
+    this->nome = nome;
+    this->_identificador = identificador;
+}
+
+set<int>  Turma::getDisciplinas() {
     return this->_disciplinas;
 }
 
-/**
- * @param value
- */
-void Turma::setDisciplinas(int identificador) {
-
-    //fazer uma consulta ao "banco de dados" e verificar se o código da disciplina já está cadastrado. Senão, exibir exceção.
-    this->_disciplinas.push_back(identificador);
-
+void Turma::setDisciplinas(set<int> disciplinas){
+    this->_disciplinas = disciplinas;
 }
 
-
-/**
- * @return vector<int>
- */
-vector<int> Turma::getAlunos() {
-    return EMTPY_VECTOR;
+set<int> Turma::getAlunos() {
+    return this->_alunos;
 }
 
-/**
- * @param value
- */
-void Turma::setAlunos(vector<int> value) {
-
+void Turma::setAlunos(set<int> alunos) {
+    this->_alunos = alunos;
 }
 
-/**
- * @return vector<int>
- */
-vector<int> Turma::getProfessores() {
-    return EMTPY_VECTOR;
-}
-
-/**
- * @param value
- */
-void Turma::setProfessores(vector<int> value) {
-
-}
-
-/**
- * @return Horarios
- */
-// Horarios Turma::getHorarios() {
-//     return new Horarios();
-// }
-
-// /**
-//  * @param value
-//  */
-// void Turma::setHorarios(Horarios value) {
-
-// }
-
-/**
- * @return int
- */
 int Turma::getIdentificador() {
-    return 0;
+    return this->_identificador;
 }
 
-/**
- * @param value
- */
-void Turma::setIdentificador(int value) {
+int Turma::getId(){
+    return this->_identificador;
+}
 
+void Turma::setIdentificador(int value) {
+    this->_identificador = value;
+}
+
+void Turma::removeAluno(int aluno){
+    this->_alunos.erase(aluno);
+}
+
+void Turma::insereAluno(int aluno){
+    if(this->_alunos.find(aluno) != this->_alunos.end())
+        this->_alunos.insert(aluno);
+    else
+        throw std::invalid_argument("Aluno já cadastrado!"); 
+}
+
+void Turma::insereDisciplina(int identificador) {
+    if(this->_disciplinas.find(identificador) != this->_disciplinas.end())
+        this->_disciplinas.insert(identificador);
+    else
+        throw std::invalid_argument("Discilina já cadastrada!"); 
+}
+
+void Turma::removeDisciplina(int identificador) {
+    this->_disciplinas.erase(identificador);
+}
+
+string Turma::getNome(){
+    return this->nome;
+}
+
+void Turma::setNome(string nome){
+    this->nome = nome;
 }

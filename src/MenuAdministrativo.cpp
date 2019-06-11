@@ -17,7 +17,7 @@
 using namespace std;
 using std::left;
 
-void cadastros(ManagerFuncionario &mFuncionario , ManagerAluno &mAluno, ManagerProfessor &mProfessor , ManagerDisciplina &mDisciplina){
+void cadastros(ManagerFuncionario &mFuncionario , ManagerAluno &mAluno, ManagerProfessor &mProfessor , ManagerDisciplina &mDisciplina, ManagerTurma &mTurma){
     bool sair = false;
     int value = 0;
     while(!sair){
@@ -27,7 +27,7 @@ void cadastros(ManagerFuncionario &mFuncionario , ManagerAluno &mAluno, ManagerP
         cout << "[3] Professor" << endl;
         cout << "[4] Disciplina" << endl;
         cout << "[5] Turma" << endl;
-        cout << "[0] Voltar para menu principal" << endl;
+        cout << "[0] Menu anterior" << endl;
         cin >> value;
 
         switch(value){
@@ -55,6 +55,20 @@ void cadastros(ManagerFuncionario &mFuncionario , ManagerAluno &mAluno, ManagerP
                     cout << e.what() << endl;
                 }
                 break;
+            case 4:
+                try{
+                    mDisciplina.cadastrar();
+                } catch (const std::invalid_argument& e){
+                    cout << e.what() << endl;
+                }
+                break;
+            case 5:
+                try{
+                    mTurma.cadastrar();
+                } catch (const std::invalid_argument& e){
+                    cout << e.what() << endl;
+                }
+                break;
             default:
                 cout << "Opção inválida!" << endl;
                 break;
@@ -65,7 +79,7 @@ void cadastros(ManagerFuncionario &mFuncionario , ManagerAluno &mAluno, ManagerP
 // void vinculaProfessor(){}
 // void gradeHorarios(){}
 
-void gerarRelatorios(ManagerFuncionario &mFuncionario , ManagerAluno &mAluno, ManagerProfessor &mProfessor , ManagerDisciplina &mDisciplina){
+void gerarRelatorios(ManagerFuncionario &mFuncionario , ManagerAluno &mAluno, ManagerProfessor &mProfessor , ManagerDisciplina &mDisciplina, ManagerTurma &mTurma){
     int option;
     bool sair = false;
 
@@ -74,6 +88,8 @@ void gerarRelatorios(ManagerFuncionario &mFuncionario , ManagerAluno &mAluno, Ma
         cout << "[1] Listar alunos" << endl;
         cout << "[2] Listar funcionarios" << endl;
         cout << "[3] Listar professores" << endl;
+        cout << "[4] Listar disciplinas" << endl;
+        cout << "[5] Listar turmas" << endl;
         cout << "[0] Voltar para menu anterior" << endl;
         cin >> option;
 
@@ -90,13 +106,19 @@ void gerarRelatorios(ManagerFuncionario &mFuncionario , ManagerAluno &mAluno, Ma
             case 3:
                 mProfessor.geraRelatorio();
                 break;
+            case 4:
+                mDisciplina.geraRelatorio();
+                break;
+            case 5:
+                mTurma.geraRelatorio();
+                break;
             default:
                 cout << "Opção não existe!" << endl;
         }
     }
 }
 
-void administrativo(ManagerFuncionario &mFuncionario , ManagerAluno &mAluno, ManagerProfessor &mProfessor , ManagerDisciplina &mDisciplina){
+void administrativo(ManagerFuncionario &mFuncionario , ManagerAluno &mAluno, ManagerProfessor &mProfessor , ManagerDisciplina &mDisciplina, ManagerTurma &mTurma){
     int value;
     FuncAdm *funcAdm;
 
@@ -114,7 +136,7 @@ void administrativo(ManagerFuncionario &mFuncionario , ManagerAluno &mAluno, Man
             cout << "[1] Cadastros" << endl;
             cout << "[2] Gerar relatórios" << endl;
             cout << "[3] Vincular um professor a uma disciplina" << endl;
-            cout << "[4] Montar grade de horarios" << endl;
+            // cout << "[4] Montar grade de horarios" << endl;
             cout << "[0] Voltar para menu anterior" << endl;
             cin >> value;
 
@@ -123,11 +145,13 @@ void administrativo(ManagerFuncionario &mFuncionario , ManagerAluno &mAluno, Man
                     sair = true;
                     break;
                 case 1: 
-                    cadastros(mFuncionario, mAluno , mProfessor,  mDisciplina);
+                    cadastros(mFuncionario, mAluno , mProfessor,  mDisciplina, mTurma);
                     break;
                 case 2:
-                    gerarRelatorios(mFuncionario, mAluno , mProfessor,  mDisciplina);
+                    gerarRelatorios(mFuncionario, mAluno , mProfessor,  mDisciplina, mTurma);
                     break;
+                // case 3:
+
                 default:
                     cout << "Opção não cadastrada!" << endl;
                     break;

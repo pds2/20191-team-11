@@ -7,6 +7,7 @@
 #include "../include/ManagerAluno.h"
 #include "../include/ManagerProfessor.h"
 #include "../include/ManagerDisciplina.h"
+#include "../include/ManagerTurma.h"
 #include "../include/MenuAdministrativo.h"
 #include <iostream>
 #include <string>
@@ -23,11 +24,14 @@ ManagerFuncionario mFuncionario;
 ManagerAluno mAluno;
 ManagerProfessor mProfessor;
 ManagerDisciplina mDisciplina;
+ManagerTurma mTurma;
 
 void populaTeste(){
     map<int,Aluno*> listaAlunos;
     map<int,Professor*> listaProfessores;
     map<int,FuncAdm*> listaFuncAdm;
+    map<int,Disciplina*> listaDisciplinas;
+    map<int,Turma*> listaTurmas;
 
     Aluno *a1 = new Aluno ("Isabela","14/10/1997","Feminino","Rua ABC , 520 - AP 02, Contagem- MG",25655847,1,"Edna P Souza",2013);
     Aluno *a2 = new Aluno("Gabriel Fonseca", "13/10/1988", "Masculino", "Rua Timbiras", 988123351, 2, "Delcio", 2014);
@@ -49,6 +53,20 @@ void populaTeste(){
     listaProfessores.insert( pair<int, Professor*>(prof2->getId(), prof2) );
     mProfessor.setItens(listaProfessores);
     mProfessor.setNomeRelatorio("Professores");
+
+    Disciplina *dis1 = new Disciplina("Matemática",  1, 30,  "Gisele");
+    Disciplina *dis2 = new Disciplina("Portugues",  2, 30,  "Joao");
+    listaDisciplinas.insert( pair<int, Disciplina*>(dis1->getId(), dis1) );
+    listaDisciplinas.insert( pair<int, Disciplina*>(dis2->getId(), dis2) );
+    mDisciplina.setItens(listaDisciplinas);
+    mDisciplina.setNomeRelatorio("Disciplinas");
+
+    Turma *tur1 = new Turma("Primeira série",  1);
+    Turma *tur2 = new Turma("Segunda série",  2);
+    listaTurmas.insert( pair<int, Turma*>(tur1->getId(), tur1) );
+    listaTurmas.insert( pair<int, Turma*>(tur2->getId(), tur2) );
+    mTurma.setItens(listaTurmas);
+    mTurma.setNomeRelatorio("Turmas");
 }
 
 
@@ -111,7 +129,7 @@ int main(){
                 professor();
                 break;
             case 3:
-                administrativo(mFuncionario , mAluno, mProfessor,mDisciplina);
+                administrativo(mFuncionario , mAluno, mProfessor,mDisciplina,mTurma);
                 break;
             case 4:
                 populaTeste();

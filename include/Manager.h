@@ -28,20 +28,11 @@ class Manager{
 
 };
 
-// template <class T>
-// Manager<T>::Manager(){};
-
-// template <class T>
-// void Manager<T>::cadastrar(){}
-
 template <class T>
 Manager<T>::Manager(string nome, map<int,T*> itens){
     this->nome = nome;
     this->itens = itens;
 }
-
-// template <class T>
-// Manager<T>::~Manager(){}
 
 template <class T>
 string Manager<T>::getNomeRelatorio(){
