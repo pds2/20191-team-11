@@ -10,6 +10,8 @@
 #include <set>
 #include "Historico.h"
 #include <string>
+#include <vector>
+#include <map>
 
 using namespace std;
 
@@ -20,6 +22,8 @@ private:
 	int _identificador;
 	set<int> _disciplinas;
 	set<int> _alunos;
+	int _serie;
+	map<int,string> horarios;
 
 public: 
 	Turma(string,int,set<int>,set<int>);
@@ -44,6 +48,10 @@ public:
 
 	string getNome();
 	void setNome(string);
+
+	
+	map<int,string> getHorarios();
+	void setHorarios(map<int,string> value);
 };
 
 #endif //_TURMA_H

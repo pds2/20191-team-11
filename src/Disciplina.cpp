@@ -39,6 +39,15 @@ void Disciplina::setIdentificador(int value) {
 }
 
 
+string Disciplina::getProfessor() {
+    return this->_professor;
+}
+
+void Disciplina::setProfessor(string value) {
+    this->_professor=value;
+}
+
+
 int Disciplina::getCargaHoraria() {
     return this->_cargaHoraria;
 }

@@ -34,6 +34,10 @@ class Disciplina {
 		int getCargaHoraria();
 		void setCargaHoraria(int value);
 
+
+		string getProfessor();
+		void setProfessor(string value);
+
 };
 
 #endif //_DISCIPLINA_H

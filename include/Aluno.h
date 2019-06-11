@@ -6,7 +6,9 @@
 #define _ALUNO_H
 
 #include "Pessoa.h"
+#include "Historico.h"
 #include <iostream>
+#include <map>
 #include <string>
 
 using namespace std;
@@ -16,7 +18,7 @@ class Aluno: public Pessoa {
 	private: 
 		int _matricula;
 		string _nomeResponsavelLegal;
-		//Historico historico;
+    	//map<int,Historico> _historico;
 		int _turma;
 
 	public: 
