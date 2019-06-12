@@ -64,7 +64,7 @@ void cadastros(ManagerFuncionario &mFuncionario , ManagerAluno &mAluno, ManagerP
                 break;
             case 5:
                 try{
-                    mTurma.cadastrar();
+                    mTurma.cadastrar(mAluno , mProfessor, mTurma);
                 } catch (const std::invalid_argument& e){
                     cout << e.what() << endl;
                 }
@@ -75,9 +75,6 @@ void cadastros(ManagerFuncionario &mFuncionario , ManagerAluno &mAluno, ManagerP
         }
     }
 }
-// void relatorios(){}
-// void vinculaProfessor(){}
-// void gradeHorarios(){}
 
 void gerarRelatorios(ManagerFuncionario &mFuncionario , ManagerAluno &mAluno, ManagerProfessor &mProfessor , ManagerDisciplina &mDisciplina, ManagerTurma &mTurma){
     int option;
@@ -147,7 +144,6 @@ void administrativo(ManagerFuncionario &mFuncionario , ManagerAluno &mAluno, Man
                 case 2:
                     gerarRelatorios(mFuncionario, mAluno , mProfessor,  mDisciplina, mTurma);
                     break;
-
                 default:
                     cout << "Opção não cadastrada!" << endl;
                     break;

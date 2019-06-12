@@ -18,7 +18,7 @@ class Turma {
 private: 
 	string nome;
 	int _identificador;
-	set<int> _disciplinas;
+	set<int> _professores;
 	set<int> _alunos;
 
 public: 
@@ -27,8 +27,8 @@ public:
 	Turma();
 	~Turma();
 	int getId();
-	set<int> getDisciplinas();
-	void setDisciplinas(set<int>);
+	set<int> getProfessores();
+	void setProfessores(set<int>);
 
 	set<int> getAlunos();
 	void setAlunos(set<int> value);
@@ -39,8 +39,8 @@ public:
 	void insereAluno(int);
 	void removeAluno(int);
 
-	void insereDisciplina(int);
-	void removeDisciplina(int);
+	void insereProfessor(int);
+	void removeProfessor(int);
 
 	string getNome();
 	void setNome(string);

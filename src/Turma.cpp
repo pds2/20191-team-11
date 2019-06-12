@@ -16,10 +16,10 @@ Turma::Turma(){}
 
 Turma::~Turma(){}
 
-Turma::Turma(string nome,int identificador, set<int> disciplinas, set<int> alunos){
+Turma::Turma(string nome,int identificador, set<int> professores, set<int> alunos){
     this->nome = nome;
     this->_identificador = identificador;
-    this->_disciplinas = disciplinas;
+    this->_professores = professores;
     this->_alunos = alunos;
 }
 
@@ -28,12 +28,12 @@ Turma::Turma(string nome, int identificador){
     this->_identificador = identificador;
 }
 
-set<int>  Turma::getDisciplinas() {
-    return this->_disciplinas;
+set<int>  Turma::getProfessores() {
+    return this->_professores;
 }
 
-void Turma::setDisciplinas(set<int> disciplinas){
-    this->_disciplinas = disciplinas;
+void Turma::setProfessores(set<int> professores){
+    this->_professores = professores;
 }
 
 set<int> Turma::getAlunos() {
@@ -67,15 +67,15 @@ void Turma::insereAluno(int aluno){
         throw std::invalid_argument("Aluno já cadastrado!"); 
 }
 
-void Turma::insereDisciplina(int identificador) {
-    if(this->_disciplinas.find(identificador) != this->_disciplinas.end())
-        this->_disciplinas.insert(identificador);
+void Turma::insereProfessor(int identificador) {
+    if(this->_professores.find(identificador) != this->_professores.end())
+        this->_professores.insert(identificador);
     else
         throw std::invalid_argument("Discilina já cadastrada!"); 
 }
 
-void Turma::removeDisciplina(int identificador) {
-    this->_disciplinas.erase(identificador);
+void Turma::removeProfessor(int identificador) {
+    this->_professores.erase(identificador);
 }
 
 string Turma::getNome(){
