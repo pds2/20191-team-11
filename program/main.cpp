@@ -10,6 +10,8 @@
 #include "../include/ManagerTurma.h"
 #include "../include/MenuProfessor.h"
 #include "../include/MenuAdministrativo.h"
+#include "../include/Materia.h"
+#include "../include/ManagerMateria.h"
 #include <iostream>
 #include <string>
 #include <map>
@@ -25,6 +27,7 @@ ManagerAluno mAluno;
 ManagerProfessor mProfessor;
 ManagerDisciplina mDisciplina;
 ManagerTurma mTurma;
+ManagerMateria mMateria;
 
 void populaTeste(){
     map<int,Aluno*> listaAlunos;
@@ -32,6 +35,7 @@ void populaTeste(){
     map<int,FuncAdm*> listaFuncAdm;
     map<int,Disciplina*> listaDisciplinas;
     map<int,Turma*> listaTurmas;
+    map<int,Materia*> listaMaterias;
 
     Disciplina *dis1 = new Disciplina("Matemática",  1, 30);
     Disciplina *dis2 = new Disciplina("Portugues",  2, 30);
@@ -73,6 +77,15 @@ void populaTeste(){
     listaTurmas.insert( pair<int, Turma*>(tur2->getId(), tur2) );
     mTurma.setItens(listaTurmas);
     mTurma.setNomeRelatorio("Turmas");
+
+    Materia *materia1 = new Materia(dis1->getNome(),dis1->getId(),dis1->getCargaHoraria(),1,a1->getMatricula(),60.5,2019);
+    Materia *materia2 = new Materia(dis2->getNome(),dis2->getId(),dis2->getCargaHoraria(),2,a1->getMatricula(),80.5,2019);
+    Materia *materia3 = new Materia(dis2->getNome(),dis2->getId(),dis2->getCargaHoraria(),3,a2->getMatricula(),90.5,2019);
+    listaMaterias.insert( pair<int, Materia*>(materia1->getId(), materia1) ); 
+    listaMaterias.insert( pair<int, Materia*>(materia2->getId(), materia2) );
+    listaMaterias.insert( pair<int, Materia*>(materia3->getId(), materia3) );
+    mMateria.setItens(listaMaterias);
+    mMateria.setNomeRelatorio("Materias");
 }
 
 

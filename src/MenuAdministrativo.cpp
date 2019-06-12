@@ -17,7 +17,7 @@
 using namespace std;
 using std::left;
 
-void cadastros(ManagerFuncionario &mFuncionario , ManagerAluno &mAluno, ManagerProfessor &mProfessor , ManagerDisciplina &mDisciplina, ManagerTurma &mTurma){
+void cadastros(ManagerFuncionario &mFuncionario , ManagerAluno &mAluno, ManagerProfessor &mProfessor , ManagerDisciplina &mDisciplina, ManagerTurma &mTurma, ManagerDisciplina ){
     bool sair = false;
     int value = 0;
     while(!sair){
@@ -27,6 +27,7 @@ void cadastros(ManagerFuncionario &mFuncionario , ManagerAluno &mAluno, ManagerP
         cout << "[3] Professor" << endl;
         cout << "[4] Disciplina" << endl;
         cout << "[5] Turma" << endl;
+        cout << "[6] Materia" <<endl;
         cout << "[0] Menu anterior" << endl;
         cin >> value;
 
@@ -63,6 +64,13 @@ void cadastros(ManagerFuncionario &mFuncionario , ManagerAluno &mAluno, ManagerP
                 }
                 break;
             case 5:
+                try{
+                    mTurma.cadastrar(mAluno , mProfessor, mTurma);
+                } catch (const std::invalid_argument& e){
+                    cout << e.what() << endl;
+                }
+                break;
+            case 6:
                 try{
                     mTurma.cadastrar(mAluno , mProfessor, mTurma);
                 } catch (const std::invalid_argument& e){
