@@ -118,7 +118,7 @@ int main(){
                 professor(mAluno, mProfessor , mDisciplina,mTurma);
                 break;
             case 3:
-                administrativo(mFuncionario , mAluno, mProfessor,mDisciplina,mTurma);
+                administrativo(mFuncionario , mAluno, mProfessor,mDisciplina,mTurma,mMateria);
                 break;
             case 4:
                 populaTeste();

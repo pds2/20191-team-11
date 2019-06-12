@@ -3,6 +3,7 @@
 
 #include "../include/Manager.h"
 #include "../include/Materia.h"
+#include "../include/ManagerDisciplina.h"
 #include <map>
 
 class ManagerMateria : public Manager<Materia> {
@@ -10,7 +11,7 @@ class ManagerMateria : public Manager<Materia> {
         ManagerMateria();
         ManagerMateria(string,map<int,Materia*>);
         ~ManagerMateria();
-       // void cadastrar();
+        void cadastrar(ManagerDisciplina &mDisciplina);
 };
 
 #endif

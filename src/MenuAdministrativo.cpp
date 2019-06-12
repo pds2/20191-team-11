@@ -8,6 +8,7 @@
 #include "../include/ManagerProfessor.h"
 #include "../include/ManagerDisciplina.h"
 #include "../include/MenuAdministrativo.h"
+#include "../include/ManagerMateria.h"
 #include <iostream>
 #include <string>
 #include <map>
@@ -17,7 +18,7 @@
 using namespace std;
 using std::left;
 
-void cadastros(ManagerFuncionario &mFuncionario , ManagerAluno &mAluno, ManagerProfessor &mProfessor , ManagerDisciplina &mDisciplina, ManagerTurma &mTurma, ManagerDisciplina ){
+void cadastros(ManagerFuncionario &mFuncionario , ManagerAluno &mAluno, ManagerProfessor &mProfessor , ManagerDisciplina &mDisciplina, ManagerTurma &mTurma , ManagerMateria &mMateria){
     bool sair = false;
     int value = 0;
     while(!sair){
@@ -72,7 +73,7 @@ void cadastros(ManagerFuncionario &mFuncionario , ManagerAluno &mAluno, ManagerP
                 break;
             case 6:
                 try{
-                    mTurma.cadastrar(mAluno , mProfessor, mTurma);
+                    mMateria.cadastrar(mDisciplina);
                 } catch (const std::invalid_argument& e){
                     cout << e.what() << endl;
                 }
@@ -84,7 +85,7 @@ void cadastros(ManagerFuncionario &mFuncionario , ManagerAluno &mAluno, ManagerP
     }
 }
 
-void gerarRelatorios(ManagerFuncionario &mFuncionario , ManagerAluno &mAluno, ManagerProfessor &mProfessor , ManagerDisciplina &mDisciplina, ManagerTurma &mTurma){
+void gerarRelatorios(ManagerFuncionario &mFuncionario , ManagerAluno &mAluno, ManagerProfessor &mProfessor , ManagerDisciplina &mDisciplina, ManagerTurma &mTurma, ManagerMateria &mMateria){
     int option;
     bool sair = false;
 
@@ -123,7 +124,7 @@ void gerarRelatorios(ManagerFuncionario &mFuncionario , ManagerAluno &mAluno, Ma
     }
 }
 
-void administrativo(ManagerFuncionario &mFuncionario , ManagerAluno &mAluno, ManagerProfessor &mProfessor , ManagerDisciplina &mDisciplina, ManagerTurma &mTurma){
+void administrativo(ManagerFuncionario &mFuncionario , ManagerAluno &mAluno, ManagerProfessor &mProfessor , ManagerDisciplina &mDisciplina, ManagerTurma &mTurma,  ManagerMateria &mMateria){
     int value;
     FuncAdm *funcAdm;
 
@@ -147,10 +148,10 @@ void administrativo(ManagerFuncionario &mFuncionario , ManagerAluno &mAluno, Man
                     sair = true;
                     break;
                 case 1: 
-                    cadastros(mFuncionario, mAluno , mProfessor,  mDisciplina, mTurma);
+                    cadastros(mFuncionario, mAluno , mProfessor,  mDisciplina, mTurma, mMateria);
                     break;
                 case 2:
-                    gerarRelatorios(mFuncionario, mAluno , mProfessor,  mDisciplina, mTurma);
+                    gerarRelatorios(mFuncionario, mAluno , mProfessor,  mDisciplina, mTurma, mMateria);
                     break;
                 default:
                     cout << "Opção não cadastrada!" << endl;
