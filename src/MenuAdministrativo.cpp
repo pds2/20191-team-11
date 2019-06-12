@@ -18,6 +18,7 @@
 using namespace std;
 using std::left;
 
+
 void cadastros(ManagerFuncionario &mFuncionario , ManagerAluno &mAluno, ManagerProfessor &mProfessor , ManagerDisciplina &mDisciplina, ManagerTurma &mTurma , ManagerMateria &mMateria){
     bool sair = false;
     int value = 0;

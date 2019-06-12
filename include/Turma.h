@@ -8,7 +8,6 @@
 #define _TURMA_H
 
 #include <set>
-#include "Historico.h"
 #include <string>
 #include <vector>
 #include <map>
