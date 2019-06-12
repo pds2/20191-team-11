@@ -87,9 +87,9 @@ void populaTeste(){
     mTurma.setItens(listaTurmas);
     mTurma.setNomeRelatorio("Turmas");
 
-    Materia *materia1 = new Materia(dis1->getNome(),dis1->getId(),dis1->getCargaHoraria(),1,a1->getMatricula(),60.5,2019);
-    Materia *materia2 = new Materia(dis2->getNome(),dis2->getId(),dis2->getCargaHoraria(),2,a1->getMatricula(),80.5,2019);
-    Materia *materia3 = new Materia(dis2->getNome(),dis2->getId(),dis2->getCargaHoraria(),3,a2->getMatricula(),90.5,2019);
+    Materia *materia1 = new Materia(dis1->getNome(),dis1->getId(),dis1->getCargaHoraria(),1,a1->getMatricula(),60.5,2019,1);
+    Materia *materia2 = new Materia(dis2->getNome(),dis2->getId(),dis2->getCargaHoraria(),2,a1->getMatricula(),80.5,2019,2);
+    Materia *materia3 = new Materia(dis2->getNome(),dis2->getId(),dis2->getCargaHoraria(),3,a2->getMatricula(),90.5,2019,2);
     listaMaterias.insert( pair<int, Materia*>(materia1->getId(), materia1) ); 
     listaMaterias.insert( pair<int, Materia*>(materia2->getId(), materia2) );
     listaMaterias.insert( pair<int, Materia*>(materia3->getId(), materia3) );

@@ -20,12 +20,13 @@ class Materia: public Disciplina {
         int _matriculaAluno;
         float _nota;
         int _ano;
+        int _idProfessor;
 
 	public: 
 
 	Materia();
     ~Materia();
-    Materia(string _nome, int _identificador , int _cargaHoraria, int _idMateria, int _matriculaAluno, float _nota, int _ano);
+    Materia(string _nome, int _identificador , int _cargaHoraria, int _idMateria, int _matriculaAluno, float _nota, int _ano , int _idProfessor);
 
     void setIdMateria(int value);
     int getIdMateria();
@@ -38,6 +39,9 @@ class Materia: public Disciplina {
 
     void setAno(int value);
     int getAno();
+
+    void setIdProfessor(int value);
+    int getIdProfessor();
 };
 
 #endif //_MATERIA_H
