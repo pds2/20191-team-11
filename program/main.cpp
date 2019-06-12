@@ -12,6 +12,7 @@
 #include "../include/MenuAdministrativo.h"
 #include "../include/Materia.h"
 #include "../include/ManagerMateria.h"
+#include "../include/MenuAluno.h"
 #include <iostream>
 #include <string>
 #include <map>
@@ -89,33 +90,6 @@ void populaTeste(){
 }
 
 
-void aluno(){
-    int opcaoAluno;
-
-    cout << "Escolha uma das opções: " << endl;
-    cout << "1 - Visualizar notas; " << endl;
-    cout << "2 - Visualizar disciplinas matriculadas; " << endl;
-    cout << "3 - Visualizar histórico de notas; " << endl;
-    cout << "4 - Ver mensagens dos professores; " << endl;
-
-    cin >> opcaoAluno;
-
-    switch(opcaoAluno){
-        case (1):
-        break;
-        case (2):
-        break;
-        case (3):
-        break;
-        case (4):
-        // para essa opção precisa ter banco de dados, visto que as msgs não ficarão guardadas no objeto aluno
-        break;
-        default:
-        break;
-    }
-    cout << "Digite sua matricula";
-
-}
 
 int main(){
 
@@ -138,7 +112,7 @@ int main(){
                 sair = true;
                 break;
             case 1:
-                aluno();
+                aluno(mAluno, mProfessor , mDisciplina,mTurma);
                 break;
             case 2:
                 professor(mAluno, mProfessor , mDisciplina,mTurma);
