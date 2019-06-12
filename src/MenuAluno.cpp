@@ -34,9 +34,10 @@ void aluno(ManagerAluno &mAluno, ManagerProfessor &mProfessor , ManagerDisciplin
 
             cout << "Escolha uma das opções: " << endl;
             cout << "1 - Visualizar notas; " << endl;
-            cout << "2 - Visualizar disciplinas matriculadas; " << endl;
-            cout << "3 - Visualizar histórico de notas; " << endl;
-            cout << "4 - Ver mensagens dos professores; " << endl;
+            cout << "2 - Visualizar nota total; " << endl;
+            cout << "3 - Visualizar disciplinas matriculadas; " << endl;
+            cout << "4 - Visualizar histórico de notas; " << endl;
+            cout << "5 - Visualizar informações de cadastro; " << endl;
 
             cin >> opcaoAluno;
 
@@ -48,7 +49,6 @@ void aluno(ManagerAluno &mAluno, ManagerProfessor &mProfessor , ManagerDisciplin
                 case (3):
                 break;
                 case (4):
-                // para essa opção precisa ter banco de dados, visto que as msgs não ficarão guardadas no objeto aluno
                 break;
                 default:
                 break;

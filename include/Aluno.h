@@ -9,6 +9,7 @@
 #include "Materia.h"
 #include <iostream>
 #include <map>
+#include <set>
 #include <string>
 
 using namespace std;
@@ -18,7 +19,7 @@ class Aluno: public Pessoa {
 	private: 
 		int _matricula;
 		string _nomeResponsavelLegal;
-    	map<int,Materia> _materiasInseridas;
+    	set<int> _materiasInseridas;
 		int _turma;
 
 	public: 
@@ -27,6 +28,9 @@ class Aluno: public Pessoa {
 	Aluno();
 	~Aluno();
 	int getId();
+
+	set<int> getMateria();
+	void setMateria(set<int> materiasInseridas);
 
 	float CalculaNota(int disciplina);
 	float CalculaAproveitamento(int disciplina);

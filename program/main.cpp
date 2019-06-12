@@ -40,8 +40,16 @@ void populaTeste(){
 
     Disciplina *dis1 = new Disciplina("Matemática",  1, 30);
     Disciplina *dis2 = new Disciplina("Portugues",  2, 30);
+    Disciplina *dis3 = new Disciplina("Geografia",  3, 30);
+    Disciplina *dis4 = new Disciplina("História",  4, 30);
+    Disciplina *dis5 = new Disciplina("Ciências",  5, 30);
+    Disciplina *dis6 = new Disciplina("Inglês",  6, 30);
     listaDisciplinas.insert( pair<int, Disciplina*>(dis1->getId(), dis1) );
     listaDisciplinas.insert( pair<int, Disciplina*>(dis2->getId(), dis2) );
+    listaDisciplinas.insert( pair<int, Disciplina*>(dis1->getId(), dis3) );
+    listaDisciplinas.insert( pair<int, Disciplina*>(dis2->getId(), dis4) );
+    listaDisciplinas.insert( pair<int, Disciplina*>(dis1->getId(), dis5) );
+    listaDisciplinas.insert( pair<int, Disciplina*>(dis2->getId(), dis6) );
     mDisciplina.setItens(listaDisciplinas);
     mDisciplina.setNomeRelatorio("Disciplinas");
 

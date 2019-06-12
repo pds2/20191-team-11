@@ -17,6 +17,16 @@ Aluno::Aluno(string nome,string dataNascimento, string sexo, string endereco, lo
 
 Aluno::Aluno(){};
 
+
+set<int>  Aluno::getMateria(){
+        return this->_materiasInseridas;
+}
+
+void Aluno::setMateria(set<int> materiasInseridas){
+        this->_materiasInseridas = materiasInseridas;
+}
+
+
 float Aluno::CalculaNota(int disciplina) {
     return 0.0;
 }

@@ -39,3 +39,7 @@ void ManagerAluno::cadastrar(){
         cout << "Aluno "<<nome<<" cadastrado com sucesso!" << endl;
     }
 }
+
+//void ManagerAluno::inserirLancamentoMateria(Materia* materia, int codigoMateria){
+
+//}

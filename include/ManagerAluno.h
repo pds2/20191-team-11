@@ -13,4 +13,6 @@ class ManagerAluno : public Manager<Aluno> {
         void cadastrar();
 };
 
+//void ManagerAluno::inserirLancamentoMateria(Materia* materia, int codigoMateria);
+
 #endif
