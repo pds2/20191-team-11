@@ -29,26 +29,29 @@ void aluno(ManagerAluno &mAluno, ManagerProfessor &mProfessor , ManagerDisciplin
     
         bool sair = false;
         while(!sair){
-            cout << "Ola, o que voce deseja fazer?" << endl;
-            cout << "[1] " << endl;
-            cout << "[2]" << endl;
-            cout << "[0] Voltar para menu anterior" << endl;
-            cin >> value;
 
-            switch(value){
-                case 0:
-                    sair = true;
-                    break;
-                case 1: 
-                    //cadastros(mFuncionario, mAluno , mProfessor,  mDisciplina, mTurma);
-                    break;
-                case 2:
-                    //gerarRelatorios(mFuncionario, mAluno , mProfessor,  mDisciplina, mTurma);
-                    break;
+            int opcaoAluno;
 
+            cout << "Escolha uma das opções: " << endl;
+            cout << "1 - Visualizar notas; " << endl;
+            cout << "2 - Visualizar disciplinas matriculadas; " << endl;
+            cout << "3 - Visualizar histórico de notas; " << endl;
+            cout << "4 - Ver mensagens dos professores; " << endl;
+
+            cin >> opcaoAluno;
+
+            switch(opcaoAluno){
+                case (1):
+                break;
+                case (2):
+                break;
+                case (3):
+                break;
+                case (4):
+                // para essa opção precisa ter banco de dados, visto que as msgs não ficarão guardadas no objeto aluno
+                break;
                 default:
-                    cout << "Opção não cadastrada!" << endl;
-                    break;
+                break;
             }
         }
     }catch(std::exception &e){
