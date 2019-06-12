@@ -6,7 +6,6 @@
 #define _ALUNO_H
 
 #include "Pessoa.h"
-#include "Historico.h"
 #include <iostream>
 #include <map>
 #include <string>

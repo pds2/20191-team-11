@@ -42,7 +42,7 @@ void aluno(ManagerAluno &mAluno, ManagerProfessor &mProfessor , ManagerDisciplin
 
             switch(opcaoAluno){
                 case (1):
-                break;
+                break;   
                 case (2):
                 break;
                 case (3):
