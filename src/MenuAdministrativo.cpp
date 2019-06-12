@@ -17,7 +17,7 @@
 using namespace std;
 using std::left;
 
-void cadastros(ManagerFuncionario &mFuncionario , ManagerAluno &mAluno, ManagerProfessor &mProfessor , ManagerDisciplina &mDisciplina, ManagerTurma &mTurma, ManagerDisciplina ){
+void cadastros(ManagerFuncionario &mFuncionario , ManagerAluno &mAluno, ManagerProfessor &mProfessor , ManagerDisciplina &mDisciplina, ManagerTurma &mTurma ){
     bool sair = false;
     int value = 0;
     while(!sair){

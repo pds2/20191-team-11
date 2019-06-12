@@ -6,10 +6,10 @@
 #define _ALUNO_H
 
 #include "Pessoa.h"
+#include "Materia.h"
 #include <iostream>
 #include <map>
 #include <string>
-#include <map>
 
 using namespace std;
 
@@ -18,7 +18,7 @@ class Aluno: public Pessoa {
 	private: 
 		int _matricula;
 		string _nomeResponsavelLegal;
-    	//map<int,Historico> _historico;
+    	map<int,Materia> _materiasInseridas;
 		int _turma;
 
 	public: 
