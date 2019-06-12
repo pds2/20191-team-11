@@ -74,7 +74,7 @@ void cadastros(ManagerFuncionario &mFuncionario , ManagerAluno &mAluno, ManagerP
                 break;
             case 6:
                 try{
-                    mMateria.cadastrar(mDisciplina);
+                    mMateria.cadastrar(mDisciplina,mAluno,mProfessor);
                 } catch (const std::invalid_argument& e){
                     cout << e.what() << endl;
                 }

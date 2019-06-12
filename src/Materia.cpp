@@ -11,8 +11,8 @@ using namespace std;
 
 Materia::~Materia(){}
 
-Materia::Materia(string nome, int identificador , int cargaHoraria, int idMateria, int matriculaAluno, float nota, int ano) :
-    Disciplina(nome,identificador,cargaHoraria), _idMateria(idMateria), _matriculaAluno(matriculaAluno), _nota(nota),_ano(ano) {};
+Materia::Materia(string nome, int identificador , int cargaHoraria, int idMateria, int matriculaAluno, float nota, int ano , int idProfessor) :
+    Disciplina(nome,identificador,cargaHoraria), _idMateria(idMateria), _matriculaAluno(matriculaAluno), _nota(nota),_ano(ano) , _idProfessor(idProfessor) {};
 
 Materia::Materia(){};
 
@@ -42,4 +42,12 @@ void Materia::setAno(int value){
 }
 int Materia::getAno(){
     return this->_ano;
+}
+
+
+void Materia::setIdProfessor(int value){
+    this->_idProfessor=value;
+}
+int Materia::getIdProfessor(){
+    return this->_idProfessor;
 }
