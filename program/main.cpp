@@ -61,8 +61,14 @@ void populaTeste(){
     mProfessor.setItens(listaProfessores);
     mProfessor.setNomeRelatorio("Professores");
 
-    Turma *tur1 = new Turma("Primeira série",  1);
-    Turma *tur2 = new Turma("Segunda série",  2);
+    set<int> alunos ;
+    alunos.insert(1);
+    alunos.insert(2);
+    set<int> professores;
+    professores.insert(1);
+    professores.insert(2);
+    Turma *tur1 = new Turma("Primeira série",  1,alunos,professores);
+    Turma *tur2 = new Turma("Segunda série",  2,alunos,professores);
     listaTurmas.insert( pair<int, Turma*>(tur1->getId(), tur1) );
     listaTurmas.insert( pair<int, Turma*>(tur2->getId(), tur2) );
     mTurma.setItens(listaTurmas);
