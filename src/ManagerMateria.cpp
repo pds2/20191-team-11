@@ -48,18 +48,26 @@ void ManagerMateria::cadastrar(ManagerDisciplina &mDisciplina, ManagerAluno &mAl
             cargaHoraria = mDisciplina.getItem(idDisciplina)->getCargaHoraria();
             cout << "Entre com o id do Aluno que esta cursando esta materia:" << endl;
             mAluno.geraRelatorio();
-            getline(cin,matriculaAlunoString);
-            matriculaAluno = atoi(matriculaAlunoString.c_str());
-            try{
-                mAluno.getItem(matriculaAluno);
-                nota = 0.0;
-                cout << "Entre com o ano que o aluno esta cursando a materia:" << endl;
-                getline(cin,anoString);
-                ano = atoi(anoString.c_str());
-                
+                        getline(cin,matriculaAlunoString);
+                        matriculaAluno = atoi(matriculaAlunoString.c_str());
+                        try{
+                            mAluno.getItem(matriculaAluno);
+                            nota = 0.0;
+                            cout << "Entre com o ano que o aluno esta cursando a materia:" << endl;
+                            getline(cin,anoString);
+                            ano = atoi(anoString.c_str());
+                            
+            
+                            this->insereItem(idMateria,new Materia(nome,idDisciplina,cargaHoraria,idMateria,matriculaAluno,nota,ano,idProfessor));
+                            set<int> materiaOld = mAluno.getItem(matriculaAluno)->getMateria();
+                            materiaOld.insert(idMateria);
 
-                this->insereItem(idMateria,new Materia(nome,idDisciplina,cargaHoraria,idMateria,matriculaAluno,nota,ano,idProfessor));
+                            mAluno.getItem(matriculaAluno)->setMateria(materiaOld);
+
+
+
                 listarMateriaPorAluno(matriculaAluno, idMateria,mAluno,mProfessor);
+
             }catch (const std::invalid_argument& e){
                     cout << e.what() << endl;
                     return;
