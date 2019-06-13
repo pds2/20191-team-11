@@ -33,6 +33,29 @@ void ManagerMateria::listarTodasMateriasAluno(int matricula,ManagerAluno &mAluno
 
 }
 
+void ManagerMateria::listarSetMateriasPorAluno(int matricula , ManagerAluno &mAluno){
+    set<int> setMaterias = mAluno.getItem(matricula)->getMateria();
+    for (int i : setMaterias) {
+        cout << "===================================================" << endl;
+        cout << "                Materia "<< this->getItem(i)->getNome() << endl;
+        cout << "Nota: "<< this->getItem(i)->getNota() << endl;
+    }
+}
+
+void ManagerMateria::calcularNotaPorAluno(int matricula , ManagerAluno &mAluno, int cod_Disc){
+    set<int> setMaterias = mAluno.getItem(matricula)->getMateria();
+    float notaTotal=0;
+    for (int i : setMaterias) {
+        if(this->getItem(i)->getId() == cod_Disc){
+            notaTotal = notaTotal + this->getItem(i)->getNota();
+        }
+    }
+        
+        cout << "===================================================" << endl;
+        cout << "                Nota Total: " << notaTotal << endl;
+
+}
+
 void ManagerMateria::lancarNotaAluno(ManagerAluno &mAluno, ManagerProfessor &mProfessor , int idProfessor){
     string matriculaString , idMateriaString, notaString;
     int matricula , idMateria;

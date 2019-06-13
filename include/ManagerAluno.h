@@ -11,6 +11,7 @@ class ManagerAluno : public Manager<Aluno> {
         ManagerAluno(string,map<int,Aluno*>);
         ~ManagerAluno();
         void cadastrar();
+        //void visualizarNotas(int matricula);
 };
 
 //void ManagerAluno::inserirLancamentoMateria(Materia* materia, int codigoMateria);

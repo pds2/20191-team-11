@@ -9,6 +9,7 @@
 #include "../include/ManagerDisciplina.h"
 #include "../include/ManagerTurma.h"
 #include "../include/MenuAdministrativo.h"
+#include "../include/ManagerMateria.h"
 #include <iostream>
 #include <string>
 #include <map>
@@ -17,12 +18,14 @@
 
 
 
-void aluno(ManagerAluno &mAluno, ManagerProfessor &mProfessor , ManagerDisciplina &mDisciplina, ManagerTurma &mTurma){
+void aluno(ManagerAluno &mAluno, ManagerMateria &mMateria, ManagerTurma &mTurma){
     int value;
     Aluno *aluno;
+    int cod_Disc;
 
     cout << "Digite sua matrícula: ";
     cin >> value;
+    cout << value;
     try {
         aluno = mAluno.getItem(value);
         cout << "Nome: " << aluno->getNome() << endl;
@@ -36,19 +39,26 @@ void aluno(ManagerAluno &mAluno, ManagerProfessor &mProfessor , ManagerDisciplin
             cout << "1 - Visualizar notas; " << endl;
             cout << "2 - Visualizar nota total; " << endl;
             cout << "3 - Visualizar disciplinas matriculadas; " << endl;
-            cout << "4 - Visualizar histórico de notas; " << endl;
-            cout << "5 - Visualizar informações de cadastro; " << endl;
+            cout << "4 - Visualizar informações de cadastro; " << endl;
+            cout << "5 - Sair; " << endl;
 
             cin >> opcaoAluno;
 
             switch(opcaoAluno){
                 case (1):
+                mMateria.listarSetMateriasPorAluno(value , mAluno);
                 break;   
                 case (2):
-                break;
+                cout << "Digite o código da disciplina: " ;
+                cin >> cod_Disc;
+                mMateria.calcularNotaPorAluno(value , mAluno, cod_Disc);   
+                break;        
                 case (3):
                 break;
                 case (4):
+                break;
+                case (5):
+                sair = true;
                 break;
                 default:
                 break;

@@ -16,7 +16,9 @@ class ManagerMateria : public Manager<Materia> {
         void cadastrar(ManagerDisciplina &mDisciplina, ManagerAluno &mAluno,ManagerProfessor &mProfessor);
         void listarMateriaPorAluno(int matricula , int idMateria,ManagerAluno &mAluno);
         void listarTodasMateriasAluno(int matricula,ManagerAluno &mAluno);
-        void lancarNotaAluno(ManagerAluno &mAluno, ManagerProfessor &mProfessor ,  int idProfessor);
+        void lancarNotaAluno(ManagerAluno &mAluno, ManagerProfessor &mProfessor ,  int idProfessor);        
+		void listarSetMateriasPorAluno(int matricula , ManagerAluno &mAluno);		      
+		void calcularNotaPorAluno(int matricula , ManagerAluno &mAluno, int cod_Disc);
 
 };
 

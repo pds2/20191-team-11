@@ -1,5 +1,6 @@
 #include "../include/ManagerAluno.h"
 #include "../include/Manager.h"
+#include "../include/ManagerMateria.h"
 
 ManagerAluno::ManagerAluno() : Manager<Aluno>() {}
 
@@ -39,6 +40,12 @@ void ManagerAluno::cadastrar(){
         cout << "Aluno "<<nome<<" cadastrado com sucesso!" << endl;
     }
 }
+
+
+//void ManagerAluno::visualizarNotas(int matricula){
+//    listarSetMateriasPorAluno(matricula , this);
+//}
+
 
 //void ManagerAluno::inserirLancamentoMateria(Materia* materia, int codigoMateria){
 

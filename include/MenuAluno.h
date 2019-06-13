@@ -16,4 +16,4 @@
 #include <iomanip>
 
 
-void aluno(ManagerAluno &mAluno, ManagerProfessor &mProfessor , ManagerDisciplina &mDisciplina, ManagerTurma &mTurma);
+void aluno(ManagerAluno &mAluno, ManagerMateria &mMateria, ManagerTurma &mTurma);

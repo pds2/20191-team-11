@@ -130,7 +130,7 @@ int main(){
                 sair = true;
                 break;
             case 1:
-                aluno(mAluno, mProfessor , mDisciplina,mTurma);
+                aluno(mAluno, mMateria, mTurma);
                 break;
             case 2:
                 professor(mAluno, mProfessor , mDisciplina,mTurma,mMateria);
