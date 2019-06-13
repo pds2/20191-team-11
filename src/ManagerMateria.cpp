@@ -3,6 +3,7 @@
 #include "../include/ManagerAluno.h"
 #include "../include/ManagerProfessor.h"
 #include "../include/Manager.h"
+#include <set>
 
 ManagerMateria::ManagerMateria() : Manager<Materia>() {}
 
@@ -42,39 +43,36 @@ void ManagerMateria::cadastrar(ManagerDisciplina &mDisciplina, ManagerAluno &mAl
         getline(cin,idProfessorString);
         idProfessor = atoi(idProfessorString.c_str());
         try {
+            //O erro acontece aqui 
             mProfessor.getItem(idProfessor);
             idDisciplina = mProfessor.getItem(idProfessor)->getDisciplina();
             nome = mDisciplina.getItem(idDisciplina)->getNome();
             cargaHoraria = mDisciplina.getItem(idDisciplina)->getCargaHoraria();
             cout << "Entre com o id do Aluno que esta cursando esta materia:" << endl;
             mAluno.geraRelatorio();
-                        getline(cin,matriculaAlunoString);
-                        matriculaAluno = atoi(matriculaAlunoString.c_str());
-                        try{
-                            mAluno.getItem(matriculaAluno);
-                            nota = 0.0;
-                            cout << "Entre com o ano que o aluno esta cursando a materia:" << endl;
-                            getline(cin,anoString);
-                            ano = atoi(anoString.c_str());
-                            
-            
-                            this->insereItem(idMateria,new Materia(nome,idDisciplina,cargaHoraria,idMateria,matriculaAluno,nota,ano,idProfessor));
-                            set<int> materiaOld = mAluno.getItem(matriculaAluno)->getMateria();
-                            materiaOld.insert(idMateria);
-
-                            mAluno.getItem(matriculaAluno)->setMateria(materiaOld);
-
-
-
+            getline(cin,matriculaAlunoString);
+            matriculaAluno = atoi(matriculaAlunoString.c_str());
+            try{
+                 //E aqiu
+                mAluno.getItem(matriculaAluno);
+                nota = 0.0;
+                cout << "Entre com o ano que o aluno esta cursando a materia:" << endl;
+                getline(cin,anoString);
+                ano = atoi(anoString.c_str());
+                //Insere o id da materia no vetor de materias do aluno
+                this->insereItem(idMateria,new Materia(nome,idDisciplina,cargaHoraria,idMateria,matriculaAluno,nota,ano,idProfessor));
+                set<int> materiaOld = mAluno.getItem(matriculaAluno)->getMateria();
+                materiaOld.insert(idMateria);
+                mAluno.getItem(matriculaAluno)->setMateria(materiaOld);
                 listarMateriaPorAluno(matriculaAluno, idMateria,mAluno,mProfessor);
 
             }catch (const std::invalid_argument& e){
-                    cout << e.what() << endl;
-                    return;
+                cout << e.what() << endl;
+                return;
             }
         }catch (const std::invalid_argument& e){
-                    cout << e.what() << endl;
-                    return;
+            cout << e.what() << endl;
+            return;
         }
 
     }
