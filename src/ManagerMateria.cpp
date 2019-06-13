@@ -3,8 +3,9 @@
 #include "../include/ManagerAluno.h"
 #include "../include/ManagerProfessor.h"
 #include "../include/Manager.h"
+#include "../include/Aluno.h"
 #include <set>
-
+#include <map>
 ManagerMateria::ManagerMateria() : Manager<Materia>() {}
 
 ManagerMateria::ManagerMateria(string nome,map<int,Materia*> materias) : Manager<Materia>(nome,materias){}
@@ -19,12 +20,48 @@ void ManagerMateria::listarMateriaPorAluno(int matricula , int idMateria,Manager
     cout << "Nota: "<< this->getItem(idMateria)->getNota() << endl;
     int idProfessor = this->getItem(idMateria)->getIdProfessor();
     cout << "Professor : " << mProfessor.getItem(idProfessor)->getNome() << endl;
+    cout << "===================================================" << endl;
 }
 
-void ManagerMateria::listarMaterias(){
+void ManagerMateria::listarTodasMateriasAluno(int matricula,ManagerAluno &mAluno){
+    set <int>materias = mAluno.getItem(matricula)->getMateria();
+    cout << "===================================================" << endl;
+    for (int i : materias){
+        cout << i << "      " << this->getItem(i)->getNome() << endl;
+    }
+    cout << "===================================================" << endl;
+
+}
+
+void ManagerMateria::lancarNotaAluno(ManagerAluno &mAluno, ManagerProfessor &mProfessor , int idProfessor){
+    string matriculaString , idMateriaString, notaString;
+    int matricula , idMateria;
+    float nota;
+    cout << "Para qual aluno você deseja lançar as notas ?" << endl;
+    int idDisciplina = mProfessor.getItem(idProfessor)->getDisciplina();
+    //aqui deveria ter um tratamento que um professor so poderia lancar a nota da sua disciplina
+    mAluno.geraRelatorio();
+    cin.ignore();
+    getline(cin,matriculaString);
+    matricula = atoi(matriculaString.c_str());
+    cout << "Qual a id materia que voce dejesa lancar a nota ?" << endl;
+    listarTodasMateriasAluno(matricula,mAluno);
+    getline(cin,idMateriaString);
+    idMateria = atof(idMateriaString.c_str());
+    try{
+        this->getItem(idMateria);
+        cout << "Qual a nota ?" << endl;
+        getline(cin,notaString);
+        nota = atoi(notaString.c_str());
+        this->getItem(idMateria)->setNota(nota);
+        cout << "Sucesso ao lançar a nota!" << endl;
+        listarMateriaPorAluno(matricula , idMateria,mAluno, mProfessor);
+    }catch (const std::invalid_argument& e){
+        cout << e.what() << endl;
+        return;
+    }
     
 }
-
 
 void ManagerMateria::cadastrar(ManagerDisciplina &mDisciplina, ManagerAluno &mAluno, ManagerProfessor &mProfessor){
     string nome, idDisciplinaString , cargaHorariaString, idMateriaString, matriculaAlunoString , anoString , idProfessorString;

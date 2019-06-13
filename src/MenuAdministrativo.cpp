@@ -29,7 +29,7 @@ void cadastros(ManagerFuncionario &mFuncionario , ManagerAluno &mAluno, ManagerP
         cout << "[3] Professor" << endl;
         cout << "[4] Disciplina" << endl;
         cout << "[5] Turma" << endl;
-        cout << "[6] Materia" <<endl;
+        cout << "[6] Vincular um Aluno a uma Materia" <<endl;
         cout << "[0] Menu anterior" << endl;
         cin >> value;
 

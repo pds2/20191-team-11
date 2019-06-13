@@ -133,7 +133,7 @@ int main(){
                 aluno(mAluno, mProfessor , mDisciplina,mTurma);
                 break;
             case 2:
-                professor(mAluno, mProfessor , mDisciplina,mTurma);
+                professor(mAluno, mProfessor , mDisciplina,mTurma,mMateria);
                 break;
             case 3:
                 administrativo(mFuncionario , mAluno, mProfessor,mDisciplina,mTurma,mMateria);

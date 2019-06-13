@@ -17,7 +17,7 @@
 
 
 
-void professor(ManagerAluno &mAluno, ManagerProfessor &mProfessor , ManagerDisciplina &mDisciplina, ManagerTurma &mTurma){
+void professor(ManagerAluno &mAluno, ManagerProfessor &mProfessor , ManagerDisciplina &mDisciplina, ManagerTurma &mTurma, ManagerMateria &mMateria){
     int value;
     Professor *professor;
 
@@ -31,8 +31,8 @@ void professor(ManagerAluno &mAluno, ManagerProfessor &mProfessor , ManagerDisci
         bool sair = false;
         while(!sair){
             cout << "Ola, o que voce deseja fazer?" << endl;
-            cout << "[1] " << endl;
-            cout << "[2]" << endl;
+            cout << "[1] - Lançar a nota do aluno" << endl;
+            cout << "[2] - Relatorios "<< endl;
             cout << "[0] Voltar para menu anterior" << endl;
             cin >> value;
 
@@ -41,7 +41,7 @@ void professor(ManagerAluno &mAluno, ManagerProfessor &mProfessor , ManagerDisci
                     sair = true;
                     break;
                 case 1: 
-                    //cadastros(mFuncionario, mAluno , mProfessor,  mDisciplina, mTurma);
+                    mMateria.lancarNotaAluno(mAluno,mProfessor, value);
                     break;
                 case 2:
                     //gerarRelatorios(mFuncionario, mAluno , mProfessor,  mDisciplina, mTurma);
