@@ -12,14 +12,14 @@ ManagerMateria::ManagerMateria(string nome,map<int,Materia*> materias) : Manager
 
 ManagerMateria::~ManagerMateria(){}
 
-void ManagerMateria::listarMateriaPorAluno(int matricula , int idMateria,ManagerAluno &mAluno, ManagerProfessor &mProfessor){
+void ManagerMateria::listarMateriaPorAluno(int matricula , int idMateria,ManagerAluno &mAluno){
     cout << "===================================================" << endl;
     cout << "                Materia "<< this->getItem(idMateria)->getNome() << endl;
     cout << "===================================================" << endl;
     cout << "                Aluno: "<< mAluno.getItem(matricula)->getNome()<<endl;
     cout << "Nota: "<< this->getItem(idMateria)->getNota() << endl;
-    int idProfessor = this->getItem(idMateria)->getIdProfessor();
-    cout << "Professor : " << mProfessor.getItem(idProfessor)->getNome() << endl;
+    //int idProfessor = this->getItem(idMateria)->getIdProfessor();
+    //cout << "Professor : " << mProfessor.getItem(idProfessor)->getNome() << endl;
     cout << "===================================================" << endl;
 }
 
@@ -55,7 +55,7 @@ void ManagerMateria::lancarNotaAluno(ManagerAluno &mAluno, ManagerProfessor &mPr
         nota = atoi(notaString.c_str());
         this->getItem(idMateria)->setNota(nota);
         cout << "Sucesso ao lançar a nota!" << endl;
-        listarMateriaPorAluno(matricula , idMateria,mAluno, mProfessor);
+        listarMateriaPorAluno(matricula , idMateria,mAluno);
     }catch (const std::invalid_argument& e){
         cout << e.what() << endl;
         return;
@@ -101,7 +101,7 @@ void ManagerMateria::cadastrar(ManagerDisciplina &mDisciplina, ManagerAluno &mAl
                 set<int> materiaOld = mAluno.getItem(matriculaAluno)->getMateria();
                 materiaOld.insert(idMateria);
                 mAluno.getItem(matriculaAluno)->setMateria(materiaOld);
-                listarMateriaPorAluno(matriculaAluno, idMateria,mAluno,mProfessor);
+                listarMateriaPorAluno(matriculaAluno, idMateria,mAluno);
 
             }catch (const std::invalid_argument& e){
                 cout << e.what() << endl;

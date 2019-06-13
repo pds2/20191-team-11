@@ -17,3 +17,4 @@
 
 
 void professor(ManagerAluno &mAluno, ManagerProfessor &mProfessor , ManagerDisciplina &mDisciplina, ManagerTurma &mTurma, ManagerMateria &mMateria);
+void verNotaPorAluno(ManagerAluno &mAluno, ManagerMateria &mMateria);
