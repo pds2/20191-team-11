@@ -6,7 +6,7 @@ ManagerFuncionario::ManagerFuncionario() : Manager<FuncAdm>() {}
 ManagerFuncionario::ManagerFuncionario(string nome,map<int,FuncAdm*> funcionarios) : Manager<FuncAdm>(nome,funcionarios){}
 
 ManagerFuncionario::~ManagerFuncionario(){}
-
+/*Cadastro de um funcionário administrivo (secretaria,diretoria) */
 void ManagerFuncionario::cadastrar(){
     string nome , dataNascimento , sexo , endereco, telefoneString, salarioString, registroString, setor;
     int registro;

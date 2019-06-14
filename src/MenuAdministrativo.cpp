@@ -18,7 +18,12 @@
 using namespace std;
 using std::left;
 
-
+/*
+No menu administrativo é possivel que o funcionário administrativo
+acesse a funcao de cadastrar um aluno, professor, disciplina, turma e
+vincule um aluno a uma materia. Além disso, é possivel que ele faça a
+extração de diversos relatorios.
+ */
 void cadastros(ManagerFuncionario &mFuncionario , ManagerAluno &mAluno, ManagerProfessor &mProfessor , ManagerDisciplina &mDisciplina, ManagerTurma &mTurma , ManagerMateria &mMateria){
     bool sair = false;
     int value = 0;

@@ -8,7 +8,6 @@
 
 using namespace std;
 
-// Disciplina::Disciplina(){}
 
 Disciplina::~Disciplina(){}
 

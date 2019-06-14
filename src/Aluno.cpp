@@ -17,6 +17,9 @@ Aluno::Aluno(string nome,string dataNascimento, string sexo, string endereco, lo
 
 Aluno::Aluno(){};
 
+/*Funcao que retorna a lista de ids que materias que o aluno esta cursando
+Apartir desses ids é possível que o aluno visualize suas notas
+ */ 
 
 set<int>  Aluno::getMateria(){
         return this->_materiasInseridas;
@@ -59,11 +62,3 @@ int Aluno::getTurma() {
 void Aluno::setTurma(int value) {
     this->_turma = value;
 }
-
-/*Historico Aluno::getHistorico() {
-    return null;
-}
-
-void Aluno::setHistorico(Historico value) {
-
-}*/

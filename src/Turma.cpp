@@ -15,7 +15,8 @@ using namespace std;
 Turma::Turma(){}
 
 Turma::~Turma(){}
-
+/*Uma turma possui a vinculacao os professores que dao aula naquela turma
+e os alunos que estão nela. */
 Turma::Turma(string nome,int identificador, set<int> professores, set<int> alunos){
     this->nome = nome;
     this->_identificador = identificador;

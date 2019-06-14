@@ -7,6 +7,12 @@ ManagerDisciplina::ManagerDisciplina(string nome,map<int,Disciplina*> disciplina
 
 ManagerDisciplina::~ManagerDisciplina(){}
 
+/*Função para cadastar uma disciplina
+Ao cadastrar uma disciplina, não é informado qual professor
+irá ministra-la. Afinal, é possível que mais de um professor de a
+mesma disciplina. Apenas no cadastro de professor é feito o vinculo 
+de qual disciplina ele ministrará 
+*/
 void ManagerDisciplina::cadastrar(){
     string nome , identificadorString , cargaHorariaString ;
     int identificador, cargaHoraria;
