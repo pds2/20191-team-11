@@ -38,9 +38,9 @@ void aluno(ManagerAluno &mAluno, ManagerMateria &mMateria, ManagerTurma &mTurma)
             cout << "Escolha uma das opções: " << endl;
             cout << "1 - Visualizar notas; " << endl;
             cout << "2 - Visualizar nota total; " << endl;
-            cout << "3 - Visualizar disciplinas matriculadas; " << endl;
-            cout << "4 - Visualizar informações de cadastro; " << endl;
-            cout << "5 - Sair; " << endl;
+            //cout << "3 - Visualizar disciplinas matriculadas; " << endl;
+            //cout << "4 - Visualizar informações de cadastro; " << endl;
+            cout << "0 - Sair; " << endl;
 
             cin >> opcaoAluno;
 
@@ -49,15 +49,16 @@ void aluno(ManagerAluno &mAluno, ManagerMateria &mMateria, ManagerTurma &mTurma)
                 mMateria.listarSetMateriasPorAluno(value , mAluno);
                 break;   
                 case (2):
-                cout << "Digite o código da disciplina: " ;
+                cout << "Qual a id materia que voce deseja visualizar a nota ?" << endl;
+                mMateria.listarTodasMateriasAluno(value,mAluno);
                 cin >> cod_Disc;
                 mMateria.calcularNotaPorAluno(value , mAluno, cod_Disc);   
                 break;        
-                case (3):
+                /*case (3):
                 break;
                 case (4):
-                break;
-                case (5):
+                break;*/
+                case (0):
                 sair = true;
                 break;
                 default:
