@@ -36,7 +36,12 @@ Funcionario::Funcionario(){}
  * @param telefone - Telefone do funcionario
  * @param salario - Salário do funcionario
  * @param registro - Registro do funcionario
+ * 
+ * Funcionario herda as informaçoes da classe PESSOA. E as classes
+* Funcionario Administrativo e Professor herdam as informações dessa
+* classe
  */
+
 Funcionario::Funcionario(string nome,string dataNascimento, string sexo, string endereco, long telefone, float salario, int registro ) :
     Pessoa(nome,dataNascimento,sexo,endereco,telefone),  _salario(salario) , _registro(registro) {};
 

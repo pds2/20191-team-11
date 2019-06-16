@@ -10,7 +10,7 @@ ManagerTurma::ManagerTurma() : Manager<Turma>() {}
 ManagerTurma::ManagerTurma(string nome,map<int,Turma*> turmas) : Manager<Turma>(nome,turmas){}
 
 ManagerTurma::~ManagerTurma(){}
-
+/*Listagem dos alunos e professores vinculados a uma turma */
 void ManagerTurma::listarTurmaVinculadas(int identificador , ManagerAluno &mAluno , ManagerProfessor &mProfessor){
     set<int> setAlunos = this->getItem(identificador)->getAlunos();
     set<int> setProfessores = this->getItem(identificador)->getProfessores();
@@ -31,7 +31,8 @@ void ManagerTurma::listarTurmaVinculadas(int identificador , ManagerAluno &mAlun
 }
 
 
-
+/*Ao cadastrar uma turma é possivel inserir uma lista dos alunos
+e professores que estão vinculados a ela*/
 void ManagerTurma::cadastrar(ManagerAluno &mAluno , ManagerProfessor &mProfessor, ManagerTurma &mTurma){
     string nome,identificadorString, qtdProfessorString, qtdAlunoString, registroString, matriculaString;
     int identificador , qtdProfessor, qtdAluno, registro, matricula;

@@ -8,6 +8,10 @@ ManagerAluno::ManagerAluno(string nome,map<int,Aluno*> funcionarios) : Manager<A
 
 ManagerAluno::~ManagerAluno(){}
 
+/*Função para cadastrar um novo aluno
+São feitas algumas validações no código, como não inserir alunos
+com matriculas iguais, etc
+*/
 void ManagerAluno::cadastrar(){
     string nome , dataNascimento , sexo , endereco , nomeResponsavelLegal, matriculaString, turmaString, telefoneString;
     int matricula , turma;

@@ -12,6 +12,7 @@ ManagerMateria::ManagerMateria(string nome,map<int,Materia*> materias) : Manager
 
 ManagerMateria::~ManagerMateria(){}
 
+/*Listagem do nome da materia (que é o nome da disciplina), nome do aluno que esta fazendo a materia e a nota dele */
 void ManagerMateria::listarMateriaPorAluno(int matricula , int idMateria,ManagerAluno &mAluno){
     cout << "===================================================" << endl;
     cout << "                Materia "<< this->getItem(idMateria)->getNome() << endl;
@@ -32,7 +33,7 @@ void ManagerMateria::listarTodasMateriasAluno(int matricula,ManagerAluno &mAluno
     cout << "===================================================" << endl;
 
 }
-
+/*Vincular uma materia a um determinado aluno */
 void ManagerMateria::listarSetMateriasPorAluno(int matricula , ManagerAluno &mAluno){
     set<int> setMaterias = mAluno.getItem(matricula)->getMateria();
     for (int i : setMaterias) {
@@ -41,7 +42,7 @@ void ManagerMateria::listarSetMateriasPorAluno(int matricula , ManagerAluno &mAl
         cout << "Nota: "<< this->getItem(i)->getNota() << endl;
     }
 }
-
+/*Calcula e exibe a nota do aluno em todas as materias que ele esta vicnulado */
 void ManagerMateria::calcularNotaPorAluno(int matricula , ManagerAluno &mAluno, int cod_Disc){
     set<int> setMaterias = mAluno.getItem(matricula)->getMateria();
     float notaTotal=0;
@@ -55,7 +56,7 @@ void ManagerMateria::calcularNotaPorAluno(int matricula , ManagerAluno &mAluno, 
         cout << "                Nota Total: " << notaTotal << endl;
 
 }
-
+/*Funcao utilizada pelo professor, para lançar uma nota para um determinado aluno */
 void ManagerMateria::lancarNotaAluno(ManagerAluno &mAluno, ManagerProfessor &mProfessor , int idProfessor){
     string matriculaString , idMateriaString, notaString;
     int matricula , idMateria;
@@ -86,6 +87,9 @@ void ManagerMateria::lancarNotaAluno(ManagerAluno &mAluno, ManagerProfessor &mPr
     
 }
 
+/*Cadastra uma nova materia e vincula ela ao aluno.
+Nessa funcao sao feitas algumas validações, como não permitir cadastrar
+uma materia a um aluno ou professor que não existe. */
 void ManagerMateria::cadastrar(ManagerDisciplina &mDisciplina, ManagerAluno &mAluno, ManagerProfessor &mProfessor){
     string nome, idDisciplinaString , cargaHorariaString, idMateriaString, matriculaAlunoString , anoString , idProfessorString;
     int idDisciplina , cargaHoraria, idMateria, matriculaAluno , ano, idProfessor;

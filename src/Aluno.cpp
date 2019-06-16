@@ -43,7 +43,9 @@ Aluno::Aluno(){};
  * Método que retorna a matéria ao aluno
  *
  * @return set com ID's de matérias
+ * Apartir desses ids é possível que o aluno visualize suas notas
  */
+
 set<int>  Aluno::getMateria(){
         return this->_materiasInseridas;
 }
@@ -129,11 +131,3 @@ int Aluno::getTurma() {
 void Aluno::setTurma(int value) {
     this->_turma = value;
 }
-
-/*Historico Aluno::getHistorico() {
-    return null;
-}
-
-void Aluno::setHistorico(Historico value) {
-
-}*/
